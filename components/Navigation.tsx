@@ -50,7 +50,7 @@ export default function Navigation() {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-[100] bg-slate-900/95 backdrop-blur-md border-b transition-colors duration-200 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.3),0_2px_4px_-1px_rgba(0,0,0,0.2)] ${
       isScrolled ? 'border-white' : 'border-slate-700/50'
-    }`} style={{ position: 'fixed', top: 0, left: 0, right: 0 }}>
+    }`} style={{ transform: 'translateZ(0)', WebkitTransform: 'translateZ(0)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
           {/* Logo Section - Left */}

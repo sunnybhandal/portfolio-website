@@ -42,16 +42,32 @@ export default function Navigation() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const nav = document.querySelector('nav');
-      const navHeight = nav ? nav.offsetHeight : 0;
-      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-      const offsetPosition = elementPosition - navHeight - 2; // 2px padding above
+      const wasMenuOpen = isMobileMenuOpen;
+      setIsMobileMenuOpen(false); // Close mobile menu first
       
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-      setIsMobileMenuOpen(false); // Close mobile menu after navigation
+      // Function to perform the scroll
+      const performScroll = () => {
+        const nav = document.querySelector('nav');
+        const navHeight = nav ? nav.offsetHeight : 0;
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - navHeight; // Scroll to top of section below header
+        
+        window.scrollTo({
+          top: Math.max(0, offsetPosition),
+          behavior: 'smooth'
+        });
+      };
+      
+      // If menu was open, wait for it to close before scrolling
+      if (wasMenuOpen) {
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            performScroll();
+          });
+        });
+      } else {
+        performScroll();
+      }
     }
   };
 

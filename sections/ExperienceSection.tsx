@@ -1,4 +1,4 @@
-import ImageWithFallback from '@/components/ImageWithFallback';
+import ImageWithFallback from "@/components/ImageWithFallback";
 
 interface Experience {
   company: string;
@@ -10,49 +10,49 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
-    company: 'Symbotic',
-    title: 'Lead Solutions Engineer',
-    duration: 'Dec 2024 - Present',
-    logo: '/symbotic.svg',
+    company: "Symbotic",
+    title: "Lead Solutions Engineer",
+    duration: "Dec 2024 - Present",
+    logo: "/symbotic.svg",
     responsibilities: [
-      'Initiated and lead the design of software specifications to enhance usability, streamline error resolution, and reduce support tickets by 70%',
-      'Orchestrated the end-to-end customer journey for our telehealth robotics customers, fostering strong relationships and driving product expansion',
-      'Leaded the implementation of telehealth robotics at customer facilities, ensuring seamless platform adoption and operational efficiency',
-      'Developed detailed product roadmaps using Agile methodologies to streamline development processes, resulting in increased team efficiency',
+      "Initiated and led the design of software specifications to enhance usability, streamline error resolution, and reduce support tickets by 70%",
+      "Orchestrated the end-to-end customer journey for our telehealth robotics customers, fostering strong relationships and driving product expansion",
+      "Leaded the implementation of telehealth robotics at customer facilities, ensuring seamless platform adoption and operational efficiency",
+      "Developed detailed product roadmaps using Agile methodologies to streamline development processes, resulting in increased team efficiency",
     ],
   },
   {
-    company: 'OhmniLabs',
-    title: 'Senior Solutions Engineer',
-    duration: 'Sep 2022 - Dec 2024',
-    logo: '/ohmniLabs.svg',
+    company: "OhmniLabs",
+    title: "Senior Solutions Engineer",
+    duration: "Sep 2022 - Dec 2024",
+    logo: "/ohmniLabs.svg",
     responsibilities: [
-      'Led all implementation projects and delivered compelling product demos to prospective stakeholders, resulting in revenue generation exceeding $1,000,000',
-      'Managed the customer journey through onboarding, product adoption, and expansion which resulted in over $300,000 in expansion revenue',
-      'Delivered exceptional customer support, nurturing long-term customer engagement and achieving a 100% customer retention rate over 2 years',
-      'Designed and implemented new features using Figma and UI/UX principles, enhancing user experience and reducing support tickets by 30%',
-      'Created comprehensive support and training content, including documentation, photos, and videos',
+      "Led all implementation projects and delivered compelling product demos to prospective stakeholders, resulting in revenue generation exceeding $1,000,000",
+      "Managed the customer journey through onboarding, product adoption, and expansion which resulted in over $300,000 in expansion revenue",
+      "Delivered exceptional customer support, nurturing long-term customer engagement and achieving a 100% customer retention rate over 2 years",
+      "Designed and implemented new features using Figma and UI/UX principles, enhancing user experience and reducing support tickets by 30%",
+      "Created comprehensive support and training content, including documentation, photos, and videos",
     ],
   },
   {
-    company: 'Freelance',
-    title: 'Product Designer',
-    duration: 'Dec 2023 - Feb 2024',
-    logo: '/briefcase.svg',
+    company: "Freelance",
+    title: "Product Designer",
+    duration: "Dec 2023 - Feb 2024",
+    logo: "/briefcase.svg",
     responsibilities: [
-      'Led comprehensive efforts encompassing research, user story development, wireframing, prototyping, and design for the mobile view of an Event Registration app',
-      'Partnered with developers to validate workflows to promote alignment across the project',
+      "Led comprehensive efforts encompassing research, user story development, wireframing, prototyping, and design for the mobile view of an Event Registration app",
+      "Partnered with developers to validate workflows to promote alignment across the project",
     ],
   },
   {
-    company: 'SimplyAsk.AI',
-    title: 'Software Developer',
-    duration: 'Nov 2021 - Sep 2022',
-    logo: '/simplyAsk.svg',
+    company: "SimplyAsk.AI",
+    title: "Software Developer",
+    duration: "Nov 2021 - Sep 2022",
+    logo: "/simplyAsk.svg",
     responsibilities: [
-      'Integrated AI chatbot APIs to streamline customer service requests, enhancing efficiency and ensuring timely responses to client inquiries',
-      'Engineered frontend solutions using React.js to introduce software features, thereby amplifying runtime efficiency and elevating the user experience',
-      'Executed code reviews and conducted comprehensive functionality tests for software features, ensuring seamless and successful deployments',
+      "Integrated AI chatbot APIs to streamline customer service requests, enhancing efficiency and ensuring timely responses to client inquiries",
+      "Engineered frontend solutions using React.js to introduce software features, thereby amplifying runtime efficiency and elevating the user experience",
+      "Executed code reviews and conducted comprehensive functionality tests for software features, ensuring seamless and successful deployments",
     ],
   },
 ];
@@ -111,7 +111,9 @@ export default function ExperienceSection() {
                         <span className="text-cyan-400 font-bold mt-1 flex-shrink-0">
                           •
                         </span>
-                        <span className="leading-relaxed">{responsibility}</span>
+                        <span className="leading-relaxed">
+                          {responsibility}
+                        </span>
                       </li>
                     ))}
                   </ul>

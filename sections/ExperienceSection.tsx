@@ -15,10 +15,10 @@ const experiences: Experience[] = [
     duration: "Dec 2024 - Present",
     logo: "/symbotic.svg",
     responsibilities: [
-      "Initiated and led the design of software specifications to enhance usability, streamline error resolution, and reduce support tickets by 70%",
-      "Orchestrated the end-to-end customer journey for our telehealth robotics customers, fostering strong relationships and driving product expansion",
-      "Leaded the implementation of telehealth robotics at customer facilities, ensuring seamless platform adoption and operational efficiency",
-      "Developed detailed product roadmaps using Agile methodologies to streamline development processes, resulting in increased team efficiency",
+      "Orchestrate the end-to-end customer journey for our product lines, fostering strong relationships and driving product expansion",
+      "Direct the design of software specifications to enhance usability, streamline error resolution, and reduce support tickets",
+      "Lead the implementation of healthcare robotics at customer facilities, ensuring seamless platform adoption and operational efficiency",
+      "Develop detailed product roadmaps to streamline development processes, resulting in increased team efficiency",
     ],
   },
   {
@@ -29,8 +29,8 @@ const experiences: Experience[] = [
     responsibilities: [
       "Led all implementation projects and delivered compelling product demos to prospective stakeholders, resulting in revenue generation exceeding $1,000,000",
       "Managed the customer journey through onboarding, product adoption, and expansion which resulted in over $300,000 in expansion revenue",
-      "Delivered exceptional customer support, nurturing long-term customer engagement and achieving a 100% customer retention rate over 2 years",
-      "Designed and implemented new features using Figma and UI/UX principles, enhancing user experience and reducing support tickets by 30%",
+      "Built strong customer relationships, nurturing long-term customer engagement and achieving a 100% customer retention rate over 2 years",
+      "Designed and implemented new features using Figma and UI/UX principles, enhancing user experience and reducing support tickets by 70%",
       "Created comprehensive support and training content, including documentation, photos, and videos",
     ],
   },

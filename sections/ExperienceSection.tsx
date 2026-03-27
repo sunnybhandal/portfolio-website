@@ -15,10 +15,10 @@ const experiences: Experience[] = [
     duration: "Dec 2024 - Present",
     logo: "/symbotic.svg",
     responsibilities: [
-      "Orchestrate the end-to-end customer journey for our product lines, fostering strong relationships and driving product expansion",
+      "Experienced in leveraging Cursor AI to develop applications for fleet monitoring, customer communication management, and the creation of data-driven dashboards",
+      "Orchestrate the end-to-end customer journey for our product lines, fostering strong relationships and ensuring seamless product adoption",
       "Direct the design of software specifications to enhance usability, streamline error resolution, and reduce support tickets",
-      "Lead the implementation of healthcare robotics at customer facilities, ensuring seamless platform adoption and operational efficiency",
-      "Develop detailed product roadmaps to streamline development processes, resulting in increased team efficiency",
+      "Develop detailed product roadmaps informed by internal and external discussions to streamline development processes, resulting in increased product efficiency",
     ],
   },
   {
@@ -27,7 +27,7 @@ const experiences: Experience[] = [
     duration: "Sep 2022 - Dec 2024",
     logo: "/ohmniLabs.svg",
     responsibilities: [
-      "Led all implementation projects and delivered compelling product demos to prospective stakeholders, resulting in revenue generation exceeding $1,000,000",
+      "Led all implementation projects and delivered compelling product demos to healthcare executives, resulting in revenue generation exceeding $1,000,000",
       "Managed the customer journey through onboarding, product adoption, and expansion which resulted in over $300,000 in expansion revenue",
       "Built strong customer relationships, nurturing long-term customer engagement and achieving a 100% customer retention rate over 2 years",
       "Designed and implemented new features using Figma and UI/UX principles, enhancing user experience and reducing support tickets by 70%",

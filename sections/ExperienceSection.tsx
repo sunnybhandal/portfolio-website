@@ -15,10 +15,10 @@ const experiences: Experience[] = [
     duration: "Dec 2024 - Present",
     logo: "/symbotic.svg",
     responsibilities: [
-      "Experienced in leveraging Cursor AI to develop applications for fleet monitoring, customer communication management, and the creation of data-driven dashboards",
-      "Orchestrate the end-to-end customer journey for our product lines, fostering strong relationships and ensuring seamless product adoption",
-      "Direct the design of software specifications to enhance usability, streamline error resolution, and reduce support tickets",
-      "Develop detailed product roadmaps informed by internal and external discussions to streamline development processes, resulting in increased product efficiency",
+      "Develop internal tools using Cursor AI to support fleet monitoring, customer communication workflows, and real-time data visibility",
+      "Own the end-to-end customer journey, translating business requirements into scalable technical solutions and driving successful product adoption",
+      "Design and define software specifications in collaboration with engineering, improving product usability and reducing recurring support issues",
+      "Influence product roadmaps by leveraging customer feedback and operational data, driving improvements that increase efficiency and scalability",
     ],
   },
   {
@@ -27,11 +27,11 @@ const experiences: Experience[] = [
     duration: "Sep 2022 - Dec 2024",
     logo: "/ohmniLabs.svg",
     responsibilities: [
-      "Led all implementation projects and delivered compelling product demos to healthcare executives, resulting in revenue generation exceeding $1,000,000",
-      "Managed the customer journey through onboarding, product adoption, and expansion which resulted in over $300,000 in expansion revenue",
-      "Built strong customer relationships, nurturing long-term customer engagement and achieving a 100% customer retention rate over 2 years",
-      "Designed and implemented new features using Figma and UI/UX principles, enhancing user experience and reducing support tickets by 70%",
-      "Created comprehensive support and training content, including documentation, photos, and videos",
+      "Led the implementation of technical solutions and delivered compelling product demos to healthcare executives, resulting in revenue generation exceeding $1,000,000",
+      "Managed the customer lifecycle (onboarding, product adoption, expansion), driving $300K+ in expansion revenue and achieving 100% retention over 2 years",
+      "Partnered with engineering and product teams to prioritize and implement feature improvements based on customer feedback and usage patterns",
+      "Identified product usability gaps through support data analysis and redesigned user workflows using Figma, reducing support tickets by 70%",
+      "Created scalable onboarding and support resources (documentation, video), improving implementation efficiency and customer experience",
     ],
   },
   {
@@ -50,9 +50,9 @@ const experiences: Experience[] = [
     duration: "Nov 2021 - Sep 2022",
     logo: "/simplyAsk.svg",
     responsibilities: [
-      "Integrated AI chatbot APIs to streamline customer service requests, enhancing efficiency and ensuring timely responses to client inquiries",
-      "Engineered frontend solutions using React.js to introduce software features, thereby amplifying runtime efficiency and elevating the user experience",
-      "Executed code reviews and conducted comprehensive functionality tests for software features, ensuring seamless and successful deployments",
+      "Integrated third-party APIs to automate customer service workflows, improving response times and operational efficiency",
+      "Engineered frontend solutions using JavaScript, ensuring seamless interaction with backend services and APIs",
+      "Conducted code reviews and end-to-end testing to ensure reliability and performance of new features",
     ],
   },
 ];

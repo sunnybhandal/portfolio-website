@@ -19,11 +19,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio - Solutions Engineer",
-  description: "Portfolio of a Solutions Engineer specializing in healthcare robotics",
-  icons: {
-    icon: "/logo.svg",
-  },
+  title: "Sunny Bhandal",
+  description: "Sunny Bhandal: Portfolio website of a Solutions Engineer specializing in Software Engineering and AI robotics",
 };
 
 export default function RootLayout({

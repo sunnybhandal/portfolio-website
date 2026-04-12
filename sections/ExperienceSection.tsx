@@ -16,9 +16,9 @@ const experiences: Experience[] = [
     logo: "/symbotic.svg",
     responsibilities: [
       "Experienced in leveraging Cursor AI to develop applications for fleet monitoring, customer communication management, and the creation of data-driven dashboards",
-      "Orchestrate the end-to-end customer journey for our product lines, fostering strong relationships and driving product expansion",
+      "Orchestrate the end-to-end customer journey for our product lines, fostering strong relationships and ensuring seamless product adoption",
       "Direct the design of software specifications to enhance usability, streamline error resolution, and reduce support tickets",
-      "Develop detailed product roadmaps to streamline development processes, resulting in increased team efficiency",
+      "Develop detailed product roadmaps informed by internal and external discussions to streamline development processes, resulting in increased product efficiency",
     ],
   },
   {

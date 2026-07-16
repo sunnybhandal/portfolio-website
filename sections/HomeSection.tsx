@@ -52,18 +52,17 @@ export default function HomeSection() {
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-4 sm:px-6">
-        <div className="mx-auto w-full max-w-4xl text-center space-y-5 sm:space-y-7 hero-copy">
+        <div className="mx-auto w-full max-w-4xl text-center space-y-8 sm:space-y-7 hero-copy">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-100 leading-[1.05] tracking-tight">
             Websites designed to impress.
             <br />
             <span className="animated-gradient">Built to perform.</span>
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto">
-            Custom websites that blend modern development, intuitive UI/UX, and
-            persuasive copywriting—so businesses can build trust, attract
+            Custom websites that blend modern development and intuitive UI/UX, so that businesses can build trust, attract
             customers, and grow online.
           </p>
-          <div className="flex flex-row items-center justify-center gap-3 pt-2">
+          <div className="flex flex-row items-center justify-center gap-3 pt-4 sm:pt-2">
             <a
               href="#portfolio"
               className="px-5 sm:px-7 py-3 rounded-sm font-medium text-center transition-all duration-300 bg-cyan-400 text-slate-900 border-2 border-transparent hover:bg-transparent hover:text-cyan-400 hover:border-cyan-400 cursor-pointer whitespace-nowrap"

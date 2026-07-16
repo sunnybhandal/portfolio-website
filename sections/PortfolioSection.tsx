@@ -13,7 +13,7 @@ export default function PortfolioSection() {
   return (
     <section
       id="portfolio"
-      className="min-h-screen flex items-start md:items-center justify-center py-16 sm:py-20 bg-gradient-to-br from-slate-800 via-slate-900 to-indigo-900"
+      className="flex items-center justify-center py-16 sm:py-20 bg-gradient-to-br from-slate-800 via-slate-900 to-indigo-900"
     >
       <div className="max-w-6xl mx-auto w-full px-4 sm:px-6">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-slate-100 mb-12 sm:mb-16">

@@ -42,35 +42,66 @@ export default function Navigation() {
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
-    if (element) {
-      const wasMenuOpen = isMobileMenuOpen;
-      setIsMobileMenuOpen(false); // Close mobile menu first
-      
-      // Function to perform the scroll
-      const performScroll = () => {
-        const nav = document.querySelector('nav');
-        const navHeight = nav ? nav.offsetHeight : 0;
-        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-        const offsetPosition = elementPosition - navHeight; // Scroll to top of section below header
-        
-        window.scrollTo({
-          top: Math.max(0, offsetPosition),
-          behavior: 'smooth'
-        });
-      };
-      
-      // If menu was open, wait for it to close before scrolling
-      if (wasMenuOpen) {
+    if (!element) return;
+
+    const wasMenuOpen = isMobileMenuOpen;
+    setIsMobileMenuOpen(false);
+
+    const performScroll = () => {
+      const nav = document.querySelector('nav');
+      const navHeight = nav ? nav.offsetHeight : 0;
+      const elementPosition =
+        element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - navHeight;
+
+      window.scrollTo({
+        top: Math.max(0, offsetPosition),
+        behavior: 'smooth',
+      });
+    };
+
+    if (wasMenuOpen) {
+      requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            performScroll();
-          });
+          performScroll();
         });
-      } else {
-        performScroll();
-      }
+      });
+    } else {
+      performScroll();
     }
   };
+
+  // Match in-page hash links (buttons/text) to the same header-offset scroll as the nav
+  useEffect(() => {
+    const handleAnchorClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement | null;
+      const anchor = target?.closest('a[href^="#"]') as HTMLAnchorElement | null;
+      if (!anchor) return;
+
+      const href = anchor.getAttribute('href');
+      if (!href || href === '#') return;
+
+      const sectionId = href.slice(1);
+      const element = document.getElementById(sectionId);
+      if (!element) return;
+
+      event.preventDefault();
+
+      const nav = document.querySelector('nav');
+      const navHeight = nav ? nav.offsetHeight : 0;
+      const elementPosition =
+        element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - navHeight;
+
+      window.scrollTo({
+        top: Math.max(0, offsetPosition),
+        behavior: 'smooth',
+      });
+    };
+
+    document.addEventListener('click', handleAnchorClick);
+    return () => document.removeEventListener('click', handleAnchorClick);
+  }, []);
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-[100] bg-slate-900/95 backdrop-blur-md border-b transition-colors duration-200 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.3),0_2px_4px_-1px_rgba(0,0,0,0.2)] ${

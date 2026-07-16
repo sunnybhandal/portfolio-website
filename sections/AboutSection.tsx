@@ -12,8 +12,8 @@ export default function AboutSection() {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-14 items-center">
-          <div className="md:col-span-5 flex justify-center md:justify-start">
-            <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl ring-4 ring-cyan-400/70 shadow-cyan-500/20 shrink-0">
+          <div className="md:col-span-5 flex justify-center md:justify-start w-full">
+            <div className="relative w-full aspect-square md:w-80 md:h-80 md:aspect-auto lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl ring-4 ring-cyan-400/70 shadow-cyan-500/20 shrink-0">
               <ImageWithFallback
                 src="/deuces.svg"
                 alt="Profile Picture"

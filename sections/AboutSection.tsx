@@ -1,32 +1,4 @@
-import { Heart, MapPin, Film, ChefHat } from 'lucide-react';
 import ImageWithFallback from '@/components/ImageWithFallback';
-
-const interests = [
-  {
-    icon: Heart,
-    title: 'Healthy Lifestyle',
-    description:
-      "I love staying active, whether through weightlifting, yoga, hiking, or playing sports whenever I get the chance. Weightlifting is the foundation of my routine and I enjoy the discipline and challenge of progressive training. I also love hiking in Alberta, especially in the Kananaskis and Banff areas.",
-  },
-  {
-    icon: MapPin,
-    title: 'Travel',
-    description:
-      "I love exploring new destinations and experiencing different cultures. Some of my favorite places I've visited are Iceland, Amsterdam, Spain, Poland, South Korea, and the Azores in Portugal.",
-  },
-  {
-    icon: Film,
-    title: 'Movies & TV Shows',
-    description:
-      "I'm a big fan of media and entertainment. I enjoy exploring diverse genres as I'm open to watching anything. Christopher Nolan is unmatched.",
-  },
-  {
-    icon: ChefHat,
-    title: 'Baking',
-    description:
-      "With a lifelong sweet tooth, I was naturally drawn to baking and it quickly became a passion. I love watching my creations come to life and fine-tuning recipes until they're just right. Lately, I've been specializing in cookies and cheesecakes.",
-  },
-];
 
 export default function AboutSection() {
   return (
@@ -35,43 +7,51 @@ export default function AboutSection() {
       className="min-h-screen flex items-center justify-center py-16 sm:py-20 bg-slate-900"
     >
       <div className="max-w-6xl mx-auto w-full px-4 sm:px-6">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-slate-100 mb-8 sm:mb-10">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-slate-100 mb-10 sm:mb-14">
           About Me
         </h2>
-        <div className="flex justify-center mb-12 sm:mb-16">
-          <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl ring-4 ring-slate-700/50">
-            <ImageWithFallback
-              src="/deuces.svg"
-              alt="Profile Picture"
-              fill
-              className="object-cover"
-            />
+
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-14 items-center">
+          <div className="md:col-span-5 flex justify-center md:justify-start">
+            <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl ring-4 ring-cyan-400/70 shadow-cyan-500/20 shrink-0">
+              <ImageWithFallback
+                src="/deuces.svg"
+                alt="Profile Picture"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-          {interests.map((interest, index) => {
-            const Icon = interest.icon;
-            return (
-              <div
-                key={index}
-                className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-slate-800 to-slate-700/50 hover:shadow-xl hover:shadow-cyan-500/10 transition-all duration-300 border border-slate-700/50 hover:border-cyan-400/50"
-              >
-                <div className="flex items-start space-x-3 sm:space-x-4">
-                  <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br from-cyan-500 to-cyan-400 flex items-center justify-center text-white shadow-lg shadow-cyan-500/30">
-                    <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-xl sm:text-2xl font-semibold text-slate-100 mb-2 sm:mb-3">
-                      {interest.title}
-                    </h3>
-                    <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                      {interest.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+
+          <div className="md:col-span-7 space-y-5 sm:space-y-6 text-base sm:text-lg text-slate-300 leading-relaxed">
+            <p>
+              I&apos;m a web developer and designer with a passion for creating
+              digital experiences that are intuitive, engaging, and built with
+              the user in mind. I believe great design isn&apos;t just about
+              aesthetics, it&apos;s about making every interaction feel
+              effortless while helping businesses communicate their message
+              clearly and effectively.
+            </p>
+            <p>
+              My background in software development gave me a strong technical
+              foundation, while my current role at Symbotic has strengthened my
+              focus on user experience. I work closely with customers and
+              engineering teams to improve the software that powers autonomous
+              robot fleets, translating real-world feedback into intuitive
+              solutions that simplify complex workflows and create better
+              experiences for the people using them every day.
+            </p>
+            <p>
+              Beyond web development, I enjoy bringing brands to life through
+              thoughtful, cohesive design. From business cards and brochures to
+              presentations and other marketing materials, I love creating
+              visual assets that strengthen a brand&apos;s identity and leave a
+              lasting impression. Whether I&apos;m writing compelling copy,
+              refining a user journey, or designing a brand asset, my goal is
+              always the same: to create work that is purposeful, user-friendly,
+              and memorable.
+            </p>
+          </div>
         </div>
       </div>
     </section>

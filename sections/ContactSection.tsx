@@ -79,7 +79,7 @@ export default function ContactSection() {
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm sm:text-base font-medium text-slate-300 mb-2"
+                className="block text-sm sm:text-base font-medium text-white mb-2"
               >
                 Name
               </label>
@@ -96,7 +96,7 @@ export default function ContactSection() {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm sm:text-base font-medium text-slate-300 mb-2"
+                className="block text-sm sm:text-base font-medium text-white mb-2"
               >
                 Email
               </label>
@@ -113,7 +113,7 @@ export default function ContactSection() {
             <div>
               <label
                 htmlFor="details"
-                className="block text-sm sm:text-base font-medium text-slate-300 mb-2"
+                className="block text-sm sm:text-base font-medium text-white mb-2"
               >
                 Details
               </label>

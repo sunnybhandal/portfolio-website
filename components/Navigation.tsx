@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Menu, X } from 'lucide-react';
 import ImageWithFallback from './ImageWithFallback';
 
 const sections = [
@@ -117,15 +116,19 @@ export default function Navigation() {
           {/* Mobile Navigation - Right */}
           <div className="md:hidden">
             <button
+              type="button"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-slate-300 hover:text-cyan-400 transition-colors cursor-pointer"
+              className={`menu-toggle p-2 text-slate-300 hover:text-cyan-400 transition-colors cursor-pointer ${
+                isMobileMenuOpen ? 'is-open' : ''
+              }`}
               aria-label="Toggle menu"
+              aria-expanded={isMobileMenuOpen}
             >
-              {isMobileMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
+              <span className="menu-toggle-box" aria-hidden="true">
+                <span className="menu-toggle-line" />
+                <span className="menu-toggle-line" />
+                <span className="menu-toggle-line" />
+              </span>
             </button>
           </div>
         </div>

@@ -39,6 +39,16 @@ export default function PricingSection() {
                 If you have a smaller project or aren&apos;t sure where to start,
                 I&apos;d be happy to discuss options.
               </p>
+              <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+                If you have any questions, please visit the{' '}
+                <a
+                  href="#faq"
+                  className="text-cyan-400 hover:text-cyan-300 underline decoration-cyan-400/40 hover:decoration-cyan-300 transition-colors"
+                >
+                  Frequently Asked Questions
+                </a>{' '}
+                section.
+              </p>
             </div>
 
             <div className="space-y-3 pt-2">

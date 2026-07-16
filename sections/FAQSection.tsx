@@ -1,9 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import { ChevronDown } from 'lucide-react';
 
-const faqs = [
+const faqs: { question: string; answer: ReactNode }[] = [
   {
     question: 'How much does a website cost?',
     answer:
@@ -12,17 +12,12 @@ const faqs = [
   {
     question: 'What’s included in a project?',
     answer:
-      'Each project includes custom functionality, responsive design, strategy sessions, brand optimization, and ongoing support. Revisions are available for an additional fee.',
-  },
-  {
-    question: 'Do you build new sites and refresh existing ones?',
-    answer:
-      'Yes. Whether you’re starting from scratch or refreshing an existing website, I can help define the right approach for your business and audience.',
+      'Each project includes custom functionality, responsive design, strategy sessions, brand optimization, and ongoing support. Revisions are available for an additional fee but highly depend on the amount of work required.',
   },
   {
     question: 'How long does a typical project take?',
     answer:
-      'Timelines vary based on scope and how quickly content and feedback are available. After an initial conversation, I’ll share a clear estimate so you know what to expect before we begin.',
+      'Timelines vary based on scope and how quickly content and feedback are available. After an initial conversation, I’ll share a clear estimate so you know what to expect before we begin. It should take about a week for me to provide you with an initial draft that we can have a discussion about and then make adjustments from there.',
   },
   {
     question: 'What do you need from me to get started?',
@@ -30,9 +25,50 @@ const faqs = [
       'A short overview of your business, goals, and any examples you like is a great start. From there, we’ll cover content, design preferences, and the features that matter most.',
   },
   {
-    question: 'How do I get in touch?',
+    question: 'Can you help with more than just websites?',
     answer:
-      'Fill out the contact form with your name, email, and project details, and I’ll follow up soon to discuss next steps.',
+      'Absolutely. While websites are my primary focus, I also design a wide range of marketing and branding materials. Whether you need business cards, brochures, presentations, social media graphics, images, videos, or other branded content, I can help create a cohesive visual identity across all of your marketing materials.',
+  },
+  {
+    question: 'Do you write website copy?',
+    answer:
+      'Yes. Clear, compelling messaging is just as important as great design. I can help write or refine your website copy to ensure it communicates your brand effectively and encourages visitors to take action.',
+  },
+  {
+    question: 'Will my website work on mobile devices?',
+    answer:
+      'Yes. Every website I build is fully responsive and optimized to provide a seamless experience across desktops, tablets, and smartphones.',
+  },
+  {
+    question: 'Can you redesign my existing website?',
+    answer:
+      'Absolutely. If your current website feels outdated, difficult to navigate, or no longer reflects your brand, I can redesign it with a modern look, improved user experience, and better performance.',
+  },
+  {
+    question: 'What types of websites do you build?',
+    answer:
+      'I design and develop custom websites for businesses, professionals, and personal brands. Whether you need a portfolio, business website, landing page, or a complete redesign, every website is built to be responsive, user-friendly, and tailored to your goals.',
+  },
+  {
+    question: 'Do you provide website maintenance?',
+    answer:
+      'Yes. I can help with ongoing updates, content changes, performance improvements, and general maintenance to keep your website running smoothly.',
+  },
+  {
+    question: 'How do I get in touch?',
+    answer: (
+      <>
+        Fill out the{' '}
+        <a
+          href="#contact"
+          className="text-cyan-400 hover:text-cyan-300 underline decoration-cyan-400/40 hover:decoration-cyan-300 transition-colors"
+        >
+          contact form
+        </a>{' '}
+        with your name, email, and project details, and I’ll follow up soon to
+        discuss next steps.
+      </>
+    ),
   },
 ];
 
@@ -50,7 +86,7 @@ export default function FAQSection() {
       />
       <div className="relative z-10 max-w-6xl mx-auto w-full px-4 sm:px-6">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-100 tracking-tight mb-10 sm:mb-14">
-          FAQ
+          Frequently Asked Questions
         </h2>
         <div className="faq-list border-t border-slate-700/50">
           {faqs.map((faq, index) => {
@@ -69,7 +105,13 @@ export default function FAQSection() {
                   aria-controls={answerId}
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                 >
-                  <span className="text-base sm:text-lg md:text-xl font-medium text-slate-100 group-hover:text-cyan-300 transition-colors duration-200">
+                  <span
+                    className={`text-base sm:text-lg md:text-xl font-medium transition-colors duration-200 ${
+                      isOpen
+                        ? 'text-cyan-400'
+                        : 'text-white group-hover:text-cyan-300'
+                    }`}
+                  >
                     {faq.question}
                   </span>
                   <ChevronDown

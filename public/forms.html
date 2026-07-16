@@ -1,0 +1,20 @@
+<html lang="en">
+  <body>
+    <!--
+      Netlify parses this static file at deploy time so the contact form
+      is registered. Submissions are handled by ContactSection via POST.
+    -->
+    <form
+      name="contact"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="text" name="bot-field" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="details"></textarea>
+      <input type="text" name="subject" />
+    </form>
+  </body>
+</html>

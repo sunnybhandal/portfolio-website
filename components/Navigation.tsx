@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import ImageWithFallback from './ImageWithFallback';
 
 const sections = [
   { id: 'portfolio', label: 'Portfolio' },
@@ -113,17 +112,32 @@ export default function Navigation() {
           <div className="flex-shrink-0">
             <button
               onClick={() => scrollToSection('home')}
-              className="flex items-center focus:outline-none hover:opacity-80 transition-opacity cursor-pointer"
+              className="flex items-center focus:outline-none cursor-pointer text-[#89CFF0] hover:text-white transition-colors duration-200"
               aria-label="Go to home"
             >
-              <div className="relative w-10 h-10 sm:w-12 sm:h-12">
-                <ImageWithFallback
-                  src="/logo.svg"
-                  alt="Logo"
-                  fill
-                  className="object-contain"
+              <svg
+                className="w-10 h-10 sm:w-12 sm:h-12"
+                viewBox="0 0 109 129"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M73 33H24.0927C15.205 33 8 40.205 8 49.0927V49.0927C8 57.9805 15.205 65.1854 24.0927 65.1854H59.0927C66.7735 65.1854 73 71.4119 73 79.0927V79.0927C73 86.7735 66.7735 93 59.0927 93H8"
+                  stroke="currentColor"
+                  strokeWidth="15"
                 />
-              </div>
+                <path
+                  d="M27 8H72.5C88.2401 8 101 20.7599 101 36.5V36.5C101 52.2401 88.2401 65 72.5 65H27"
+                  stroke="currentColor"
+                  strokeWidth="15"
+                />
+                <path
+                  d="M28 65H73C88.464 65 101 77.536 101 93V93C101 108.464 88.464 121 73 121H28"
+                  stroke="currentColor"
+                  strokeWidth="15"
+                />
+              </svg>
             </button>
           </div>
 

@@ -5,13 +5,15 @@ import { Menu, X } from 'lucide-react';
 import ImageWithFallback from './ImageWithFallback';
 
 const sections = [
-  { id: 'home', label: 'Home' },
+  { id: 'portfolio', label: 'Portfolio' },
+  { id: 'pricing', label: 'Pricing' },
+  { id: 'contact', label: 'Contact' },
   { id: 'about', label: 'About' },
-  { id: 'experience', label: 'Experience' },
+  { id: 'faq', label: 'FAQ' },
 ];
 
 export default function Navigation() {
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState('portfolio');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -75,7 +77,7 @@ export default function Navigation() {
     <nav className={`fixed top-0 left-0 right-0 z-[100] bg-slate-900/95 backdrop-blur-md border-b transition-colors duration-200 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.3),0_2px_4px_-1px_rgba(0,0,0,0.2)] ${
       isScrolled ? 'border-white' : 'border-slate-700/50'
     }`} style={{ transform: 'translateZ(0)', WebkitTransform: 'translateZ(0)' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
           {/* Logo Section - Left */}
           <div className="flex-shrink-0">
@@ -96,12 +98,12 @@ export default function Navigation() {
           </div>
 
           {/* Desktop Navigation - Right */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-3">
             {sections.map((section) => (
               <button
                 key={section.id}
                 onClick={() => scrollToSection(section.id)}
-                className={`px-4 py-2 text-base font-medium transition-colors duration-200 cursor-pointer ${
+                className={`px-2.5 py-2 text-base font-medium transition-colors duration-200 cursor-pointer ${
                   activeSection === section.id
                     ? 'text-cyan-400'
                     : 'text-slate-300 hover:text-cyan-400'
@@ -136,7 +138,7 @@ export default function Navigation() {
                 <button
                   key={section.id}
                   onClick={() => scrollToSection(section.id)}
-                  className={`px-4 py-3 text-left text-lg font-medium rounded-lg transition-colors duration-200 cursor-pointer ${
+                  className={`px-4 py-3 text-right text-lg font-medium rounded-sm transition-colors duration-200 cursor-pointer ${
                     activeSection === section.id
                       ? 'text-cyan-400 bg-slate-800/50'
                       : 'text-slate-300 hover:text-cyan-400 hover:bg-slate-800/30'

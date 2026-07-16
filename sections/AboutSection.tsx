@@ -1,4 +1,5 @@
-import { Heart, Dumbbell, MapPin, Film, ChefHat } from 'lucide-react';
+import { Heart, MapPin, Film, ChefHat } from 'lucide-react';
+import ImageWithFallback from '@/components/ImageWithFallback';
 
 const interests = [
   {
@@ -31,12 +32,22 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20 bg-slate-900"
+      className="min-h-screen flex items-center justify-center py-16 sm:py-20 bg-slate-900"
     >
-      <div className="max-w-7xl mx-auto w-full">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-slate-100 mb-12 sm:mb-16">
+      <div className="max-w-6xl mx-auto w-full px-4 sm:px-6">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-slate-100 mb-8 sm:mb-10">
           About Me
         </h2>
+        <div className="flex justify-center mb-12 sm:mb-16">
+          <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl ring-4 ring-slate-700/50">
+            <ImageWithFallback
+              src="/deuces.svg"
+              alt="Profile Picture"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {interests.map((interest, index) => {
             const Icon = interest.icon;

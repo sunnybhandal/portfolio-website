@@ -24,7 +24,7 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           <form
             onSubmit={handleSubmit}
-            className="lg:col-span-6 space-y-6"
+            className="order-2 lg:order-1 lg:col-span-6 space-y-6"
           >
             <div>
               <label
@@ -86,17 +86,16 @@ export default function ContactSection() {
             </button>
           </form>
 
-          <aside className="lg:col-span-6">
-            <div className="rounded-sm border border-slate-700/50 bg-slate-900/50 p-6 sm:p-8 lg:sticky lg:top-28 w-full">
-              <p className="w-full text-base sm:text-lg text-slate-300 leading-relaxed">
-                You can send me an email at{' '}
-                <a
-                  href="mailto:sunnybhandal123@gmail.com"
-                  className="text-cyan-400 hover:text-cyan-300 underline decoration-cyan-400/40 hover:decoration-cyan-300 transition-colors"
-                >
-                  sunnybhandal123@gmail.com
-                </a>{' '}
-                or fill out the form.
+          <aside className="order-1 lg:order-2 lg:col-span-6">
+            <div className="relative overflow-hidden rounded-sm border border-cyan-400/30 bg-gradient-to-br from-slate-900/90 via-slate-900/70 to-cyan-950/40 p-7 sm:p-10 lg:sticky lg:top-28 w-full shadow-[0_0_40px_-20px_rgba(34,211,238,0.35)]">
+              <div
+                aria-hidden
+                className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-cyan-400 to-cyan-400/40"
+              />
+              <p className="w-full pl-3 text-lg sm:text-xl md:text-2xl font-medium text-slate-100 leading-relaxed tracking-tight">
+                Whether you&apos;re starting from scratch or refreshing an
+                existing website, I&apos;d love to hear about your project. Fill
+                out the form and I&apos;ll be in touch soon.
               </p>
             </div>
           </aside>

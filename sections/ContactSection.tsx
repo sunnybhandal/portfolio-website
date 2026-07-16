@@ -67,7 +67,7 @@ export default function ContactSection() {
             <input
               type="hidden"
               name="subject"
-              value="New portfolio inquiry from sunnybhandal.com"
+              value="Website Inquiry"
             />
             <p className="hidden" aria-hidden="true">
               <label>

@@ -3,9 +3,9 @@ import ImageWithFallback from '@/components/ImageWithFallback';
 const projects = [
   {
     id: 'bridal-hair-artistry',
-    image: '/bridalDesktopHome.svg',
-    imageAlt: 'Bridal Hair Artistry website homepage',
-    href: 'https://bridalhairartistry.ca/#home',
+    image: '/weddingThumbnail.png',
+    imageAlt: 'Bridal and wedding hairstyling website homepage',
+    href: 'https://weddinghairstylist.netlify.app/',
   },
 ];
 
@@ -30,8 +30,8 @@ export default function PortfolioSection() {
                 <ImageWithFallback
                   src={project.image}
                   alt={project.imageAlt}
-                  width={1221}
-                  height={804}
+                  width={1448}
+                  height={1086}
                   className="h-auto w-full"
                   priority
                 />

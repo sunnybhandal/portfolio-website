@@ -15,10 +15,10 @@ export default function AboutSection() {
           <div className="md:col-span-5 flex justify-center md:justify-start w-full">
             <div className="relative w-[90%] aspect-square md:w-80 md:h-80 md:aspect-auto lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl ring-4 ring-cyan-400/70 shadow-cyan-500/20 shrink-0">
               <ImageWithFallback
-                src="/deuces.svg"
-                alt="Profile Picture"
+                src="/About_image.png"
+                alt="Portrait of Sunny Bhandal"
                 fill
-                className="object-cover"
+                className="object-cover object-[center_22%]"
               />
             </div>
           </div>

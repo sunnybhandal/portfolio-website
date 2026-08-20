@@ -4,26 +4,19 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center justify-center py-16 sm:py-20 bg-slate-900"
+      aria-labelledby="about-heading"
+      className="min-h-screen flex items-center justify-center py-24 sm:py-32 bg-slate-900"
     >
       <div className="max-w-6xl mx-auto w-full px-4 sm:px-6">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-slate-100 mb-10 sm:mb-14">
+        <h2
+          id="about-heading"
+          className="font-heading text-4xl sm:text-5xl md:text-6xl font-normal text-left text-slate-50 tracking-tight mb-12 sm:mb-16"
+        >
           About Me
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-14 items-center">
-          <div className="md:col-span-5 flex justify-center md:justify-start w-full">
-            <div className="relative w-[90%] aspect-square md:w-80 md:h-80 md:aspect-auto lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl ring-4 ring-cyan-400/70 shadow-cyan-500/20 shrink-0">
-              <ImageWithFallback
-                src="/About_image.png"
-                alt="Portrait of Sunny Bhandal"
-                fill
-                className="object-cover object-[center_22%]"
-              />
-            </div>
-          </div>
-
-          <div className="md:col-span-7 space-y-5 sm:space-y-6 text-base sm:text-lg text-slate-300 leading-relaxed">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-16 items-center">
+          <div className="order-2 md:order-1 md:col-span-7 space-y-5 sm:space-y-6 text-base sm:text-lg text-slate-300 leading-relaxed">
             <p>
               I&apos;m a web developer and designer with a passion for creating
               digital experiences that are intuitive, engaging, and built with
@@ -51,6 +44,18 @@ export default function AboutSection() {
               always the same: to create work that is purposeful, user-friendly,
               and memorable.
             </p>
+          </div>
+
+          <div className="order-1 md:order-2 md:col-span-5 flex justify-center md:justify-end w-full">
+            <div className="relative w-[88%] aspect-square md:w-80 md:h-80 md:aspect-auto lg:w-96 lg:h-96 rounded-full overflow-hidden ring-1 ring-white/15 shrink-0">
+              <ImageWithFallback
+                src="/aboutImage.png"
+                alt="Sunny Bhandal, web developer and designer"
+                fill
+                sizes="(max-width: 768px) 88vw, 384px"
+                className="object-cover object-center"
+              />
+            </div>
           </div>
         </div>
       </div>

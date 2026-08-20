@@ -39,38 +39,7 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (!element) return;
-
-    const wasMenuOpen = isMobileMenuOpen;
-    setIsMobileMenuOpen(false);
-
-    const performScroll = () => {
-      const nav = document.querySelector('nav');
-      const navHeight = nav ? nav.offsetHeight : 0;
-      const elementPosition =
-        element.getBoundingClientRect().top + window.scrollY;
-      const offsetPosition = elementPosition - navHeight;
-
-      window.scrollTo({
-        top: Math.max(0, offsetPosition),
-        behavior: 'smooth',
-      });
-    };
-
-    if (wasMenuOpen) {
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          performScroll();
-        });
-      });
-    } else {
-      performScroll();
-    }
-  };
-
-  // Match in-page hash links (buttons/text) to the same header-offset scroll as the nav
+  // Match in-page hash links to the same header-offset scroll as the nav
   useEffect(() => {
     const handleAnchorClick = (event: MouseEvent) => {
       const target = event.target as HTMLElement | null;
@@ -81,39 +50,58 @@ export default function Navigation() {
       if (!href || href === '#') return;
 
       const sectionId = href.slice(1);
-      const element = document.getElementById(sectionId);
+      const element =
+        sectionId === 'contact'
+          ? document.getElementById('contact-heading') ??
+            document.getElementById('contact')
+          : document.getElementById(sectionId);
       if (!element) return;
 
       event.preventDefault();
+      const wasMenuOpen = isMobileMenuOpen;
+      setIsMobileMenuOpen(false);
 
-      const nav = document.querySelector('nav');
-      const navHeight = nav ? nav.offsetHeight : 0;
-      const elementPosition =
-        element.getBoundingClientRect().top + window.scrollY;
-      const offsetPosition = elementPosition - navHeight;
+      const performScroll = () => {
+        const nav = document.querySelector('nav');
+        const navHeight = nav ? nav.offsetHeight : 0;
+        const elementPosition =
+          element.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - navHeight;
 
-      window.scrollTo({
-        top: Math.max(0, offsetPosition),
-        behavior: 'smooth',
-      });
+        window.scrollTo({
+          top: Math.max(0, offsetPosition),
+          behavior: 'smooth',
+        });
+      };
+
+      if (wasMenuOpen) {
+        requestAnimationFrame(() => {
+          requestAnimationFrame(performScroll);
+        });
+      } else {
+        performScroll();
+      }
     };
 
     document.addEventListener('click', handleAnchorClick);
     return () => document.removeEventListener('click', handleAnchorClick);
-  }, []);
+  }, [isMobileMenuOpen]);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-[100] bg-slate-900/95 backdrop-blur-md border-b transition-colors duration-200 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.3),0_2px_4px_-1px_rgba(0,0,0,0.2)] ${
-      isScrolled ? 'border-white' : 'border-slate-700/50'
+    <nav
+      aria-label="Primary"
+      className={`fixed top-0 left-0 right-0 z-[100] bg-slate-950/80 backdrop-blur-xl border-b transition-colors duration-300 ${
+      isScrolled ? 'border-white/10' : 'border-transparent'
     }`} style={{ transform: 'translateZ(0)', WebkitTransform: 'translateZ(0)' }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
           {/* Logo Section - Left */}
           <div className="flex-shrink-0">
-            <button
-              onClick={() => scrollToSection('home')}
-              className="flex items-center focus:outline-none cursor-pointer text-[#89CFF0] hover:text-white transition-colors duration-200"
-              aria-label="Go to home"
+            <a
+              href="#home"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="flex items-center focus:outline-none cursor-pointer text-cyan-400 hover:text-cyan-200 transition-colors duration-200"
+              aria-label="Sunny Bhandal home"
             >
               <svg
                 className="w-10 h-10 sm:w-12 sm:h-12"
@@ -138,23 +126,25 @@ export default function Navigation() {
                   strokeWidth="15"
                 />
               </svg>
-            </button>
+              <span className="sr-only">Sunny Bhandal</span>
+            </a>
           </div>
 
           {/* Desktop Navigation - Right */}
-          <div className="hidden md:flex items-center space-x-3">
+          <div className="hidden md:flex items-center gap-1">
             {sections.map((section) => (
-              <button
+              <a
                 key={section.id}
-                onClick={() => scrollToSection(section.id)}
-                className={`px-2.5 py-2 text-base font-medium transition-colors duration-200 cursor-pointer ${
+                href={`#${section.id}`}
+                aria-current={activeSection === section.id ? 'true' : undefined}
+                className={`px-3 py-2 text-sm font-medium tracking-wide transition-colors duration-200 cursor-pointer ${
                   activeSection === section.id
                     ? 'text-cyan-400'
-                    : 'text-slate-300 hover:text-cyan-400'
+                    : 'text-slate-400 hover:text-cyan-400'
                 }`}
               >
                 {section.label}
-              </button>
+              </a>
             ))}
           </div>
 
@@ -180,20 +170,21 @@ export default function Navigation() {
 
         {/* Mobile Dropdown Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-slate-700/50">
+          <div className="md:hidden mt-4 pb-4 border-t border-white/10">
             <div className="flex flex-col space-y-1 pt-4">
               {sections.map((section) => (
-                <button
+                <a
                   key={section.id}
-                  onClick={() => scrollToSection(section.id)}
-                  className={`px-4 py-3 text-right text-lg font-medium rounded-sm transition-colors duration-200 cursor-pointer ${
+                  href={`#${section.id}`}
+                  aria-current={activeSection === section.id ? 'true' : undefined}
+                  className={`px-4 py-3 text-right text-lg font-medium rounded-xl transition-colors duration-200 cursor-pointer ${
                     activeSection === section.id
                       ? 'text-cyan-400 bg-slate-800/50'
                       : 'text-slate-300 hover:text-cyan-400 hover:bg-slate-800/30'
                   }`}
                 >
                   {section.label}
-                </button>
+                </a>
               ))}
             </div>
           </div>

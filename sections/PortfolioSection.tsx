@@ -2,9 +2,9 @@ import ImageWithFallback from '@/components/ImageWithFallback';
 
 const projects = [
   {
-    id: 'bridal-hair-artistry',
+    id: 'featured-website',
     image: '/weddingThumbnail.png',
-    imageAlt: 'Bridal and wedding hairstyling website homepage',
+    imageAlt: 'Custom website homepage designed by Sunny Bhandal',
     href: 'https://weddinghairstylist.netlify.app/',
   },
 ];
@@ -13,10 +13,14 @@ export default function PortfolioSection() {
   return (
     <section
       id="portfolio"
-      className="flex items-center justify-center py-16 sm:py-20 bg-gradient-to-br from-slate-800 via-slate-900 to-indigo-900"
+      aria-labelledby="portfolio-heading"
+      className="flex items-center justify-center py-24 sm:py-32 bg-slate-900"
     >
       <div className="max-w-6xl mx-auto w-full px-4 sm:px-6">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-slate-100 mb-12 sm:mb-16">
+        <h2
+          id="portfolio-heading"
+          className="font-heading text-4xl sm:text-5xl md:text-6xl font-normal text-left text-slate-50 tracking-tight mb-12 sm:mb-16"
+        >
           Portfolio
         </h2>
 
@@ -24,24 +28,24 @@ export default function PortfolioSection() {
           {projects.map((project) => (
             <article
               key={project.id}
-              className="flex flex-col overflow-hidden rounded-sm border border-slate-600/40 bg-slate-900/60 shadow-lg shadow-black/20"
+              className="group flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-slate-950/40"
             >
-              <div className="w-full bg-slate-950/50">
+              <div className="w-full bg-slate-950/50 overflow-hidden">
                 <ImageWithFallback
                   src={project.image}
                   alt={project.imageAlt}
                   width={1448}
                   height={1086}
-                  className="h-auto w-full"
-                  priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="h-auto w-full transition-transform duration-700 group-hover:scale-[1.02]"
                 />
               </div>
-              <div className="p-4 sm:p-5 border-t border-slate-700/50">
+              <div className="p-5 sm:p-6">
                 <a
                   href={project.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full px-7 py-3 rounded-sm text-center font-medium transition-all duration-300 bg-cyan-400 text-slate-900 border-2 border-transparent hover:bg-transparent hover:text-cyan-400 hover:border-cyan-400 cursor-pointer"
+                  className="block w-full px-7 py-3.5 rounded-full text-center font-medium transition-colors duration-300 bg-cyan-400 text-slate-950 hover:bg-cyan-300 cursor-pointer"
                 >
                   View Website
                 </a>

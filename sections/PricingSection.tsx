@@ -1,46 +1,42 @@
-import { Check } from 'lucide-react';
-
-const includedItems = [
-  'Custom Functionality',
-  'Revisions (additional fee)',
-  'Responsive design',
-  'Ongoing support',
-  'Strategy sessions',
-  'Brand optimization',
-];
-
 export default function PricingSection() {
   return (
     <section
       id="pricing"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden py-16 sm:py-20 bg-slate-950"
+      aria-labelledby="pricing-heading"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden py-24 sm:py-32 bg-slate-950"
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_15%_20%,rgba(34,211,238,0.1),transparent_55%),radial-gradient(ellipse_50%_60%_at_90%_80%,rgba(59,130,246,0.08),transparent_50%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_80%_20%,rgba(34,211,238,0.06),transparent_55%)]"
       />
 
       <div className="relative z-10 max-w-6xl mx-auto w-full px-4 sm:px-6">
-        <div className="mb-10 sm:mb-14">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-100 tracking-tight">
+        <div className="mb-12 sm:mb-16">
+          <h2
+            id="pricing-heading"
+            className="font-heading text-4xl sm:text-5xl md:text-6xl font-normal text-left text-slate-50 tracking-tight"
+          >
             Pricing
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 border border-slate-700/50 bg-slate-900/40 backdrop-blur-sm">
-          {/* Investment story */}
-          <div className="lg:col-span-7 flex flex-col justify-between gap-10 p-7 sm:p-10 lg:p-12 border-b lg:border-b-0 lg:border-r border-slate-700/50">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6">
+          <div className="lg:col-span-7 flex flex-col justify-between gap-10 rounded-3xl border border-white/10 bg-white/[0.03] p-8 sm:p-10 lg:p-12">
             <div className="space-y-6 max-w-xl">
               <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-                Every website is tailored to your business, so pricing depends on
-                your goals, content, and functionality.
+                Every website is tailored to your business, so the investment
+                reflects your goals, content, and the features you need.
+                Websites start at $500, and if your project needs more, I&apos;ll
+                walk you through every additional cost before we begin, clearly
+                and in writing, with no surprises.
+              </p>
+              <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+                You&apos;ll always know exactly what you&apos;re paying for.
+                There are no hidden charges, ever.
               </p>
               <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
                 If you have a smaller project or aren&apos;t sure where to start,
-                I&apos;d be happy to discuss options.
-              </p>
-              <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-                If you have any questions, please visit the{' '}
+                I&apos;d be happy to discuss options. For more details, visit the{' '}
                 <a
                   href="#faq"
                   className="text-cyan-400 hover:text-cyan-300 underline decoration-cyan-400/40 hover:decoration-cyan-300 transition-colors"
@@ -52,47 +48,32 @@ export default function PricingSection() {
             </div>
 
             <div className="space-y-3 pt-2">
-              <p className="text-xs sm:text-sm font-medium tracking-[0.14em] uppercase text-slate-400">
-                Typical range
+              <p className="text-xs sm:text-sm font-medium tracking-[0.16em] uppercase text-slate-400">
+                Starting at
               </p>
-              <p className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-none">
-                <span className="text-slate-100">$1,000</span>
-                <span className="text-slate-500 mx-2 sm:mx-3">–</span>
-                <span className="text-slate-100">$4,000</span>
+              <p className="font-heading text-5xl sm:text-6xl md:text-7xl font-normal tracking-tight leading-none text-slate-50">
+                $500
               </p>
               <p className="text-sm sm:text-base text-slate-400">
-                Most projects fall within this range.
+                Transparent pricing, with every extra cost shared up front.
               </p>
             </div>
           </div>
 
-          {/* Includes panel */}
-          <div className="lg:col-span-5 relative p-7 sm:p-10 lg:p-12 bg-gradient-to-b from-slate-900/80 to-slate-950/90 border-l-0 lg:border-l-0">
-            <div
-              aria-hidden
-              className="absolute inset-y-0 left-0 w-0.5 bg-gradient-to-b from-cyan-400 via-cyan-400/70 to-blue-500/40 hidden lg:block"
-            />
-            <div
-              aria-hidden
-              className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-cyan-400 via-cyan-400/70 to-transparent lg:hidden"
-            />
-
-            <h3 className="text-lg sm:text-xl font-semibold text-slate-100 mb-6 sm:mb-8">
-              Each project will include
+          <div className="lg:col-span-5 relative flex flex-col justify-center rounded-3xl border border-white/10 bg-slate-900/60 p-8 sm:p-10 lg:p-12">
+            <h3 className="font-subheading text-3xl sm:text-4xl font-normal text-left text-slate-50 tracking-tight">
+              Ready for a consult?
             </h3>
-            <ul className="space-y-0 divide-y divide-slate-700/60">
-              {includedItems.map((item) => (
-                <li
-                  key={item}
-                  className="flex items-center gap-3 py-3.5 sm:py-4 text-sm sm:text-base text-slate-300"
-                >
-                  <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-sm border border-cyan-400/30 bg-cyan-400/10 text-cyan-300">
-                    <Check className="h-3.5 w-3.5" strokeWidth={2.5} />
-                  </span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+            <p className="mt-4 mb-8 text-base sm:text-lg text-slate-300 leading-relaxed">
+              Tell me a little about your project and I&apos;ll follow up with a
+              clear, no-pressure conversation.
+            </p>
+            <a
+              href="#contact"
+              className="inline-flex w-full sm:w-auto items-center justify-center px-7 py-3.5 rounded-full font-medium text-center transition-colors duration-300 bg-cyan-400 text-slate-950 hover:bg-cyan-300 cursor-pointer"
+            >
+              Get in Touch
+            </a>
           </div>
         </div>
       </div>

@@ -47,10 +47,14 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="min-h-screen flex items-center justify-center py-16 sm:py-20 bg-gradient-to-br from-slate-800 via-slate-900 to-indigo-900"
+      aria-labelledby="contact-heading"
+      className="min-h-screen flex items-center justify-center py-24 sm:py-32 bg-slate-950"
     >
       <div className="max-w-6xl mx-auto w-full px-4 sm:px-6">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-slate-100 mb-12 sm:mb-16">
+        <h2
+          id="contact-heading"
+          className="font-heading text-4xl sm:text-5xl md:text-6xl font-normal text-left text-slate-50 tracking-tight mb-12 sm:mb-16 scroll-mt-24 sm:scroll-mt-28"
+        >
           Let&apos;s Build Something Great
         </h2>
 
@@ -61,6 +65,7 @@ export default function ContactSection() {
             data-netlify="true"
             netlify-honeypot="bot-field"
             onSubmit={handleSubmit}
+            aria-label="Project inquiry"
             className="order-2 lg:order-1 lg:col-span-6 space-y-6"
           >
             <input type="hidden" name="form-name" value="contact" />
@@ -88,9 +93,10 @@ export default function ContactSection() {
                 type="text"
                 name="name"
                 required
+                autoComplete="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full px-4 py-3 rounded-sm bg-slate-800/50 border border-slate-700/50 text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400/50 focus:ring-1 focus:ring-cyan-400/50 transition-colors"
+                className="w-full px-4 py-3.5 rounded-xl bg-white/[0.04] border border-white/10 text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400/40 focus:ring-1 focus:ring-cyan-400/20 transition-colors"
               />
             </div>
             <div>
@@ -105,9 +111,10 @@ export default function ContactSection() {
                 type="email"
                 name="email"
                 required
+                autoComplete="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 rounded-sm bg-slate-800/50 border border-slate-700/50 text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400/50 focus:ring-1 focus:ring-cyan-400/50 transition-colors"
+                className="w-full px-4 py-3.5 rounded-xl bg-white/[0.04] border border-white/10 text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400/40 focus:ring-1 focus:ring-cyan-400/20 transition-colors"
               />
             </div>
             <div>
@@ -125,13 +132,13 @@ export default function ContactSection() {
                 value={details}
                 onChange={(e) => setDetails(e.target.value)}
                 placeholder="Tell me what you're looking for, and I'll be in touch."
-                className="w-full px-4 py-3 rounded-sm bg-slate-800/50 border border-slate-700/50 text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400/50 focus:ring-1 focus:ring-cyan-400/50 transition-colors resize-none overflow-y-auto"
+                className="w-full px-4 py-3.5 rounded-xl bg-white/[0.04] border border-white/10 text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400/40 focus:ring-1 focus:ring-cyan-400/20 transition-colors resize-none overflow-y-auto"
               />
             </div>
 
             {status === 'success' && (
               <p className="text-sm sm:text-base text-cyan-300">
-                Thank you — your message was sent. I&apos;ll be in touch soon.
+                Thank you. Your message was sent, and I&apos;ll be in touch soon.
               </p>
             )}
             {status === 'error' && (
@@ -150,22 +157,18 @@ export default function ContactSection() {
             <button
               type="submit"
               disabled={status === 'submitting'}
-              className="w-full sm:w-auto px-8 py-3 rounded-sm font-medium transition-all duration-300 bg-cyan-400 text-slate-900 border-2 border-transparent hover:bg-transparent hover:text-cyan-400 hover:border-cyan-400 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full sm:w-auto px-8 py-3.5 rounded-full font-medium transition-colors duration-300 bg-cyan-400 text-slate-950 hover:bg-cyan-300 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {status === 'submitting' ? 'Sending…' : 'Send'}
             </button>
           </form>
 
           <aside className="order-1 lg:order-2 lg:col-span-6">
-            <div className="relative overflow-hidden rounded-sm border border-cyan-400/30 bg-gradient-to-br from-slate-900/90 via-slate-900/70 to-cyan-950/40 p-7 sm:p-10 lg:sticky lg:top-28 w-full shadow-[0_0_40px_-20px_rgba(34,211,238,0.35)]">
-              <div
-                aria-hidden
-                className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-cyan-400 to-cyan-400/40"
-              />
-              <p className="w-full pl-3 text-lg sm:text-xl md:text-2xl font-medium text-slate-100 leading-relaxed tracking-tight">
+            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 sm:p-10 lg:sticky lg:top-28 w-full">
+              <p className="font-subheading text-2xl sm:text-3xl md:text-[2.15rem] font-normal text-slate-100 leading-snug">
                 Whether you&apos;re starting from scratch or refreshing an
                 existing website, I&apos;d love to hear about your project. Fill
-                out the form and I&apos;ll be in touch soon.
+                out the form and I&apos;ll be in touch.
               </p>
             </div>
           </aside>

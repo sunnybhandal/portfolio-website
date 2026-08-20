@@ -1,11 +1,20 @@
-import ImageWithFallback from '@/components/ImageWithFallback';
+import PortfolioCarousel from '@/components/PortfolioCarousel';
 
 const projects = [
   {
     id: 'featured-website',
-    image: '/weddingThumbnail.png',
-    imageAlt: 'Custom website homepage designed by Sunny Bhandal',
     href: 'https://weddinghairstylist.netlify.app/',
+    images: [
+      {
+        src: '/weddingThumbnail.png',
+        alt: 'Desktop view of a custom website homepage designed by Sunny Bhandal',
+      },
+      {
+        src: '/mobileWeddingThumbnail.png',
+        alt: 'Mobile view of a custom website homepage designed by Sunny Bhandal',
+        compactOnDesktop: true,
+      },
+    ],
   },
 ];
 
@@ -28,17 +37,10 @@ export default function PortfolioSection() {
           {projects.map((project) => (
             <article
               key={project.id}
-              className="group flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-slate-950/40"
+              className="flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-slate-950/40"
             >
-              <div className="w-full bg-slate-950/50 overflow-hidden">
-                <ImageWithFallback
-                  src={project.image}
-                  alt={project.imageAlt}
-                  width={1448}
-                  height={1086}
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="h-auto w-full transition-transform duration-700 group-hover:scale-[1.02]"
-                />
+              <div className="w-full overflow-hidden">
+                <PortfolioCarousel images={project.images} />
               </div>
               <div className="p-5 sm:p-6">
                 <a

@@ -16,6 +16,21 @@ const projects = [
       },
     ],
   },
+  {
+    id: 'trail-waste',
+    href: 'https://trailwastedisposal.netlify.app/',
+    images: [
+      {
+        src: '/trailWasteThumbnail.png',
+        alt: 'Desktop view of a custom website homepage designed by Sunny Bhandal',
+      },
+      {
+        src: '/trailWasteMobileThumbnail.png',
+        alt: 'Mobile view of a custom website homepage designed by Sunny Bhandal',
+        compactOnDesktop: true,
+      },
+    ],
+  },
 ];
 
 export default function PortfolioSection() {

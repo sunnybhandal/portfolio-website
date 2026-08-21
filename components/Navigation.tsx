@@ -10,8 +10,10 @@ const sections = [
   { id: 'faq', label: 'FAQ' },
 ];
 
+const scrollSectionIds = ['home', ...sections.map((section) => section.id)];
+
 export default function Navigation() {
-  const [activeSection, setActiveSection] = useState('portfolio');
+  const [activeSection, setActiveSection] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -20,21 +22,24 @@ export default function Navigation() {
       const scrollPosition = window.scrollY + 100;
       setIsScrolled(window.scrollY > 0);
 
-      for (const section of sections) {
-        const element = document.getElementById(section.id);
+      let current = 'home';
+      for (const sectionId of scrollSectionIds) {
+        const element = document.getElementById(sectionId);
         if (element) {
           const { offsetTop, offsetHeight } = element;
           if (
             scrollPosition >= offsetTop &&
             scrollPosition < offsetTop + offsetHeight
           ) {
-            setActiveSection(section.id);
+            current = sectionId;
             break;
           }
         }
       }
+      setActiveSection(current);
     };
 
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -137,7 +142,7 @@ export default function Navigation() {
                 key={section.id}
                 href={`#${section.id}`}
                 aria-current={activeSection === section.id ? 'true' : undefined}
-                className={`px-3 py-2 text-sm font-medium tracking-wide transition-colors duration-200 cursor-pointer ${
+                className={`px-3 py-2 text-base font-medium tracking-wide transition-colors duration-200 cursor-pointer ${
                   activeSection === section.id
                     ? 'text-cyan-400'
                     : 'text-slate-400 hover:text-cyan-400'

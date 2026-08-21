@@ -159,7 +159,7 @@ export default function ContactSection() {
               disabled={status === 'submitting'}
               className="w-full sm:w-auto px-8 py-3.5 rounded-full font-medium transition-colors duration-300 bg-cyan-400 text-slate-950 hover:bg-cyan-300 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              {status === 'submitting' ? 'Sending…' : 'Send'}
+              {status === 'submitting' ? 'Sending…' : 'Get a Free Quote'}
             </button>
           </form>
 

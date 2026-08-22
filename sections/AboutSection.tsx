@@ -53,7 +53,7 @@ export default function AboutSection() {
                 alt="Sunny Bhandal, web developer and designer"
                 fill
                 sizes="(max-width: 768px) 88vw, 384px"
-                className="object-cover object-center"
+                className="object-cover object-[50%_42%] scale-[1.2]"
               />
             </div>
           </div>

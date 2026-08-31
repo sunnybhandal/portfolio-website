@@ -67,8 +67,10 @@ export default function Navigation() {
       setIsMobileMenuOpen(false);
 
       const performScroll = () => {
-        const nav = document.querySelector('nav');
-        const navHeight = nav ? nav.offsetHeight : 0;
+        const headerBar = document.querySelector('.nav-bar');
+        const navHeight = headerBar
+          ? (headerBar as HTMLElement).offsetHeight
+          : 0;
         const elementPosition =
           element.getBoundingClientRect().top + window.scrollY;
         const offsetPosition = elementPosition - navHeight;
@@ -95,11 +97,16 @@ export default function Navigation() {
   return (
     <nav
       aria-label="Primary"
-      className={`fixed top-0 left-0 right-0 z-[100] bg-slate-950/80 backdrop-blur-xl border-b transition-colors duration-300 ${
-      isScrolled ? 'border-white/10' : 'border-transparent'
-    }`} style={{ transform: 'translateZ(0)', WebkitTransform: 'translateZ(0)' }}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
-        <div className="flex items-center justify-between">
+      className="fixed top-0 left-0 right-0 z-[100] bg-slate-950/80 backdrop-blur-xl"
+      style={{ transform: 'translateZ(0)', WebkitTransform: 'translateZ(0)' }}
+    >
+      <div
+        className={`nav-bar border-b transition-colors duration-300 ${
+          isScrolled ? 'border-white' : 'border-transparent'
+        }`}
+      >
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
+          <div className="flex items-center justify-between">
           {/* Logo Section - Left */}
           <div className="flex-shrink-0">
             <a
@@ -172,28 +179,34 @@ export default function Navigation() {
             </button>
           </div>
         </div>
+        </div>
+      </div>
 
-        {/* Mobile Dropdown Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-white/10">
-            <div className="flex flex-col space-y-1 pt-4">
-              {sections.map((section) => (
-                <a
-                  key={section.id}
-                  href={`#${section.id}`}
-                  aria-current={activeSection === section.id ? 'true' : undefined}
-                  className={`px-4 py-3 text-right text-lg font-medium rounded-xl transition-colors duration-200 cursor-pointer ${
-                    activeSection === section.id
-                      ? 'text-cyan-400 bg-slate-800/50'
-                      : 'text-slate-300 hover:text-cyan-400 hover:bg-slate-800/30'
-                  }`}
-                >
-                  {section.label}
-                </a>
-              ))}
+      <div
+        className={`nav-dropdown md:hidden ${isMobileMenuOpen ? 'is-open' : ''}`}
+      >
+        <div className="nav-dropdown-inner">
+          <div className="nav-dropdown-panel bg-slate-800/95 backdrop-blur-xl">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 pb-4">
+              <div className="flex flex-col space-y-1 pt-3">
+                {sections.map((section) => (
+                  <a
+                    key={section.id}
+                    href={`#${section.id}`}
+                    aria-current={activeSection === section.id ? 'true' : undefined}
+                    className={`px-4 py-3 text-right text-lg font-medium rounded-xl transition-colors duration-200 cursor-pointer ${
+                      activeSection === section.id
+                        ? 'text-cyan-400 bg-white/10'
+                        : 'text-slate-300 hover:text-cyan-400 hover:bg-white/5'
+                    }`}
+                  >
+                    {section.label}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );

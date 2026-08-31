@@ -1,18 +1,60 @@
 'use client';
 
 import { FormEvent, useState } from 'react';
+import { LoaderCircle } from 'lucide-react';
 
 type SubmitStatus = 'idle' | 'submitting' | 'success' | 'error';
+
+type FieldErrors = {
+  name?: string;
+  email?: string;
+  details?: string;
+};
+
+const fieldClass = (hasError: boolean) =>
+  `w-full px-4 py-3.5 rounded-xl bg-white/[0.04] text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-1 transition-colors ${
+    hasError
+      ? 'border border-red-400 focus:border-red-400 focus:ring-red-400/30'
+      : 'border border-white/10 focus:border-cyan-400/40 focus:ring-cyan-400/20'
+  }`;
 
 export default function ContactSection() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [details, setDetails] = useState('');
   const [status, setStatus] = useState<SubmitStatus>('idle');
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
+
+  const validateFields = () => {
+    const next: FieldErrors = {};
+
+    if (!name.trim()) {
+      next.name = 'Please enter your name.';
+    }
+
+    if (!email.trim()) {
+      next.email = 'Please enter your email.';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+      next.email = 'Please enter a valid email.';
+    }
+
+    if (!details.trim()) {
+      next.details = 'Please add a few details about your project.';
+    }
+
+    return next;
+  };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
+    const nextErrors = validateFields();
+    setFieldErrors(nextErrors);
+
+    if (Object.keys(nextErrors).length > 0) {
+      return;
+    }
+
     setStatus('submitting');
 
     try {
@@ -38,6 +80,7 @@ export default function ContactSection() {
       setName('');
       setEmail('');
       setDetails('');
+      setFieldErrors({});
       setStatus('success');
     } catch {
       setStatus('error');
@@ -65,8 +108,11 @@ export default function ContactSection() {
             data-netlify="true"
             netlify-honeypot="bot-field"
             onSubmit={handleSubmit}
+            noValidate
             aria-label="Project inquiry"
-            className="order-2 lg:order-1 lg:col-span-6 space-y-6"
+            className={`order-2 lg:order-1 lg:col-span-6 space-y-6 transition-opacity duration-300 ${
+              status === 'submitting' ? 'opacity-80' : ''
+            }`}
           >
             <input type="hidden" name="form-name" value="contact" />
             <input
@@ -95,9 +141,21 @@ export default function ContactSection() {
                 required
                 autoComplete="name"
                 value={name}
-                onChange={(e) => setName(e.target.value)}
-                className="w-full px-4 py-3.5 rounded-xl bg-white/[0.04] border border-white/10 text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400/40 focus:ring-1 focus:ring-cyan-400/20 transition-colors"
+                aria-invalid={Boolean(fieldErrors.name)}
+                aria-describedby={fieldErrors.name ? 'name-error' : undefined}
+                onChange={(e) => {
+                  setName(e.target.value);
+                  if (fieldErrors.name) {
+                    setFieldErrors((current) => ({ ...current, name: undefined }));
+                  }
+                }}
+                className={fieldClass(Boolean(fieldErrors.name))}
               />
+              {fieldErrors.name && (
+                <p id="name-error" className="mt-2 text-sm text-red-400">
+                  {fieldErrors.name}
+                </p>
+              )}
             </div>
             <div>
               <label
@@ -113,9 +171,21 @@ export default function ContactSection() {
                 required
                 autoComplete="email"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3.5 rounded-xl bg-white/[0.04] border border-white/10 text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400/40 focus:ring-1 focus:ring-cyan-400/20 transition-colors"
+                aria-invalid={Boolean(fieldErrors.email)}
+                aria-describedby={fieldErrors.email ? 'email-error' : undefined}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  if (fieldErrors.email) {
+                    setFieldErrors((current) => ({ ...current, email: undefined }));
+                  }
+                }}
+                className={fieldClass(Boolean(fieldErrors.email))}
               />
+              {fieldErrors.email && (
+                <p id="email-error" className="mt-2 text-sm text-red-400">
+                  {fieldErrors.email}
+                </p>
+              )}
             </div>
             <div>
               <label
@@ -130,10 +200,22 @@ export default function ContactSection() {
                 required
                 rows={5}
                 value={details}
-                onChange={(e) => setDetails(e.target.value)}
+                aria-invalid={Boolean(fieldErrors.details)}
+                aria-describedby={fieldErrors.details ? 'details-error' : undefined}
+                onChange={(e) => {
+                  setDetails(e.target.value);
+                  if (fieldErrors.details) {
+                    setFieldErrors((current) => ({ ...current, details: undefined }));
+                  }
+                }}
                 placeholder="Tell me what you're looking for, and I'll be in touch."
-                className="w-full px-4 py-3.5 rounded-xl bg-white/[0.04] border border-white/10 text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-cyan-400/40 focus:ring-1 focus:ring-cyan-400/20 transition-colors resize-none overflow-y-auto"
+                className={`${fieldClass(Boolean(fieldErrors.details))} resize-none overflow-y-auto`}
               />
+              {fieldErrors.details && (
+                <p id="details-error" className="mt-2 text-sm text-red-400">
+                  {fieldErrors.details}
+                </p>
+              )}
             </div>
 
             {status === 'success' && (
@@ -157,8 +239,17 @@ export default function ContactSection() {
             <button
               type="submit"
               disabled={status === 'submitting'}
-              className="w-full sm:w-auto px-8 py-3.5 rounded-full font-medium transition-colors duration-300 bg-cyan-400 text-slate-950 hover:bg-cyan-300 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+              className={`inline-flex items-center justify-center gap-2.5 w-full sm:w-auto px-8 py-3.5 rounded-full font-medium transition-all duration-300 bg-cyan-400 text-slate-950 hover:bg-cyan-300 cursor-pointer disabled:cursor-not-allowed ${
+                status === 'submitting' ? 'form-submit-busy' : 'active:scale-[0.98]'
+              }`}
             >
+              {status === 'submitting' && (
+                <LoaderCircle
+                  className="h-4 w-4 animate-spin"
+                  strokeWidth={2.25}
+                  aria-hidden
+                />
+              )}
               {status === 'submitting' ? 'Sending…' : 'Get a Free Quote'}
             </button>
           </form>

@@ -62,7 +62,7 @@ export default function FAQSection() {
                   aria-labelledby={questionId}
                 >
                   <div className="faq-answer-inner">
-                    <p className="pr-10 sm:pr-14 text-sm sm:text-base text-slate-300 leading-relaxed max-w-3xl">
+                    <p className="pr-10 sm:pr-14 text-base text-slate-300 leading-relaxed max-w-3xl">
                       {faq.question === 'How do I get in touch?' ? (
                         <>
                           Fill out the{' '}

@@ -14,7 +14,7 @@ export default function Home() {
       <JsonLd />
       <a
         href="#home"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[110] focus:rounded-full focus:bg-cyan-400 focus:px-4 focus:py-2 focus:text-slate-950"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[110] focus:rounded-xl focus:bg-cyan-400 focus:px-4 focus:py-2 focus:text-slate-950"
       >
         Skip to content
       </a>

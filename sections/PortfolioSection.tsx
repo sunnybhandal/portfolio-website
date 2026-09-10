@@ -34,11 +34,11 @@ export default function PortfolioSection() {
           Portfolio
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 justify-items-center md:justify-items-stretch">
           {projects.map((project) => (
             <article
               key={project.id}
-              className="flex flex-col overflow-hidden rounded-xl border border-white/10 bg-slate-950/40"
+              className="flex w-full max-w-[17.5rem] md:max-w-none flex-col overflow-hidden rounded-xl border border-white/10 bg-slate-950/40"
             >
               <div className="relative w-full overflow-hidden bg-slate-950/80 aspect-[338/525]">
                 <ImageWithFallback
@@ -54,7 +54,7 @@ export default function PortfolioSection() {
                   href={project.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full px-4 py-3 md:px-4 md:py-2.5 rounded-full text-center text-sm font-medium transition-colors duration-300 bg-cyan-400 text-slate-950 border-2 border-cyan-400 hover:bg-transparent hover:text-white cursor-pointer"
+                  className="block w-full px-4 py-3 md:px-4 md:py-2.5 rounded-xl text-center text-sm font-medium transition-colors duration-300 bg-cyan-400 text-slate-950 border-2 border-cyan-400 hover:bg-transparent hover:text-white cursor-pointer"
                 >
                   View Website
                 </a>

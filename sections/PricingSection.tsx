@@ -70,7 +70,7 @@ export default function PricingSection() {
             </p>
             <a
               href="#contact"
-              className="inline-flex w-full sm:w-auto items-center justify-center px-7 py-3.5 rounded-full font-medium text-center transition-colors duration-300 bg-cyan-400 text-slate-950 border-2 border-cyan-400 hover:bg-transparent hover:text-white cursor-pointer"
+              className="inline-flex w-full sm:w-auto items-center justify-center px-7 py-3.5 rounded-xl font-medium text-center transition-colors duration-300 bg-cyan-400 text-slate-950 border-2 border-cyan-400 hover:bg-transparent hover:text-white cursor-pointer"
             >
               Get in Touch
             </a>

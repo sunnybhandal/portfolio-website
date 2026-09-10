@@ -239,7 +239,7 @@ export default function ContactSection() {
             <button
               type="submit"
               disabled={status === 'submitting'}
-              className={`inline-flex items-center justify-center gap-2.5 w-full sm:w-auto px-8 py-3.5 rounded-full font-medium transition-all duration-300 bg-cyan-400 text-slate-950 border-2 border-cyan-400 hover:bg-transparent hover:text-white cursor-pointer disabled:cursor-not-allowed disabled:hover:bg-cyan-400 disabled:hover:text-slate-950 ${
+              className={`inline-flex items-center justify-center gap-2.5 w-full sm:w-auto px-8 py-3.5 rounded-xl font-medium transition-all duration-300 bg-cyan-400 text-slate-950 border-2 border-cyan-400 hover:bg-transparent hover:text-white cursor-pointer disabled:cursor-not-allowed disabled:hover:bg-cyan-400 disabled:hover:text-slate-950 ${
                 status === 'submitting' ? 'form-submit-busy' : 'active:scale-[0.98]'
               }`}
             >

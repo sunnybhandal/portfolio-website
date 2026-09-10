@@ -239,7 +239,7 @@ export default function ContactSection() {
             <button
               type="submit"
               disabled={status === 'submitting'}
-              className={`inline-flex items-center justify-center gap-2.5 w-full sm:w-auto px-8 py-3.5 rounded-full font-medium transition-all duration-300 bg-cyan-400 text-slate-950 hover:bg-cyan-300 cursor-pointer disabled:cursor-not-allowed ${
+              className={`inline-flex items-center justify-center gap-2.5 w-full sm:w-auto px-8 py-3.5 rounded-full font-medium transition-all duration-300 bg-cyan-400 text-slate-950 border-2 border-cyan-400 hover:bg-transparent hover:text-white cursor-pointer disabled:cursor-not-allowed disabled:hover:bg-cyan-400 disabled:hover:text-slate-950 ${
                 status === 'submitting' ? 'form-submit-busy' : 'active:scale-[0.98]'
               }`}
             >
@@ -255,7 +255,7 @@ export default function ContactSection() {
           </form>
 
           <aside className="order-1 lg:order-2 lg:col-span-6">
-            <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-8 sm:p-10 lg:sticky lg:top-28 w-full">
+            <div className="rounded-xl border border-white/10 bg-white/[0.03] p-8 sm:p-10 lg:sticky lg:top-28 w-full">
               <p className="font-subheading text-2xl sm:text-3xl md:text-[2.15rem] font-normal text-slate-100 leading-snug">
                 Whether you&apos;re starting from scratch or refreshing an
                 existing website, I&apos;d love to hear about your project. Fill

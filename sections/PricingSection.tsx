@@ -21,7 +21,7 @@ export default function PricingSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6">
-          <div className="lg:col-span-7 flex flex-col justify-between gap-10 rounded-3xl border border-white/10 bg-white/[0.03] p-8 sm:p-10 lg:p-12">
+          <div className="lg:col-span-7 flex flex-col justify-between gap-10 rounded-xl border border-white/10 bg-white/[0.03] p-8 sm:p-10 lg:p-12">
             <div className="space-y-6 max-w-xl">
               <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
                 Every website is tailored to your business, so the investment
@@ -60,7 +60,7 @@ export default function PricingSection() {
             </div>
           </div>
 
-          <div className="lg:col-span-5 relative flex flex-col justify-center rounded-3xl border border-white/10 bg-slate-900/60 p-8 sm:p-10 lg:p-12">
+          <div className="lg:col-span-5 relative flex flex-col justify-center rounded-xl border border-white/10 bg-slate-900/60 p-8 sm:p-10 lg:p-12">
             <h3 className="font-subheading text-3xl sm:text-4xl font-normal text-left text-slate-50 tracking-tight">
               Ready for a consult?
             </h3>
@@ -70,7 +70,7 @@ export default function PricingSection() {
             </p>
             <a
               href="#contact"
-              className="inline-flex w-full sm:w-auto items-center justify-center px-7 py-3.5 rounded-full font-medium text-center transition-colors duration-300 bg-cyan-400 text-slate-950 hover:bg-cyan-300 cursor-pointer"
+              className="inline-flex w-full sm:w-auto items-center justify-center px-7 py-3.5 rounded-full font-medium text-center transition-colors duration-300 bg-cyan-400 text-slate-950 border-2 border-cyan-400 hover:bg-transparent hover:text-white cursor-pointer"
             >
               Get in Touch
             </a>

@@ -1,35 +1,21 @@
-import PortfolioCarousel from '@/components/PortfolioCarousel';
+import ImageWithFallback from '@/components/ImageWithFallback';
 
 const projects = [
   {
-    id: 'featured-website',
-    href: 'https://weddinghairstylist.netlify.app/',
-    images: [
-      {
-        src: '/weddingThumbnail.png',
-        alt: 'Desktop view of a custom website homepage designed by Sunny Bhandal',
-      },
-      {
-        src: '/mobileWeddingThumbnail.png',
-        alt: 'Mobile view of a custom website homepage designed by Sunny Bhandal',
-        compactOnDesktop: true,
-      },
-    ],
-  },
-  {
     id: 'trail-waste',
     href: 'https://trailwastedisposal.netlify.app/',
-    images: [
-      {
-        src: '/trailWasteThumbnail.png',
-        alt: 'Desktop view of a custom website homepage designed by Sunny Bhandal',
-      },
-      {
-        src: '/trailWasteMobileThumbnail.png',
-        alt: 'Mobile view of a custom website homepage designed by Sunny Bhandal',
-        compactOnDesktop: true,
-      },
-    ],
+    image: {
+      src: '/trailWasteMobileThumbnail.png',
+      alt: 'Mobile view of a custom website homepage designed by Sunny Bhandal',
+    },
+  },
+  {
+    id: 'featured-website',
+    href: 'https://weddinghairstylist.netlify.app/',
+    image: {
+      src: '/mobileWeddingThumbnail.png',
+      alt: 'Mobile view of a custom website homepage designed by Sunny Bhandal',
+    },
   },
 ];
 
@@ -48,21 +34,27 @@ export default function PortfolioSection() {
           Portfolio
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {projects.map((project) => (
             <article
               key={project.id}
-              className="flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-slate-950/40"
+              className="flex flex-col overflow-hidden rounded-xl border border-white/10 bg-slate-950/40"
             >
-              <div className="w-full overflow-hidden">
-                <PortfolioCarousel images={project.images} />
+              <div className="relative w-full overflow-hidden bg-slate-950/80 aspect-[338/525]">
+                <ImageWithFallback
+                  src={project.image.src}
+                  alt={project.image.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 25vw"
+                  className="object-contain"
+                />
               </div>
-              <div className="p-5 sm:p-6">
+              <div className="p-4 md:p-3.5">
                 <a
                   href={project.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full px-7 py-3.5 rounded-full text-center font-medium transition-colors duration-300 bg-cyan-400 text-slate-950 hover:bg-cyan-300 cursor-pointer"
+                  className="block w-full px-4 py-3 md:px-4 md:py-2.5 rounded-full text-center text-sm font-medium transition-colors duration-300 bg-cyan-400 text-slate-950 border-2 border-cyan-400 hover:bg-transparent hover:text-white cursor-pointer"
                 >
                   View Website
                 </a>

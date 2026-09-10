@@ -27,13 +27,13 @@ export default function HomeSection() {
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 pt-2 sm:pt-3 w-full">
             <a
               href="#contact"
-              className="w-full sm:w-auto px-7 py-3.5 rounded-full font-medium text-center transition-colors duration-300 bg-cyan-400 text-slate-950 hover:bg-cyan-300 cursor-pointer whitespace-nowrap"
+              className="w-full sm:w-auto px-7 py-3.5 rounded-full font-medium text-center transition-colors duration-300 bg-cyan-400 text-slate-950 border-2 border-cyan-400 hover:bg-transparent hover:text-white cursor-pointer whitespace-nowrap"
             >
               Free Quote
             </a>
             <a
               href="#portfolio"
-              className="w-full sm:w-auto px-7 py-3.5 rounded-full font-medium text-center transition-colors duration-300 bg-slate-800/95 text-slate-200 hover:bg-slate-700 hover:text-cyan-300 cursor-pointer whitespace-nowrap"
+              className="w-full sm:w-auto px-7 py-3.5 rounded-full font-medium text-center transition-colors duration-300 bg-slate-800/95 text-slate-200 border-2 border-transparent hover:bg-transparent hover:text-white hover:border-cyan-400 cursor-pointer whitespace-nowrap"
             >
               View My Work
             </a>

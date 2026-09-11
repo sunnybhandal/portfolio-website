@@ -49,7 +49,7 @@ export default function FAQSection() {
                       {faq.question}
                     </span>
                     <ChevronDown
-                      className="faq-icon h-5 w-5 flex-shrink-0 text-cyan-400"
+                      className="faq-icon h-6 w-6 flex-shrink-0 text-cyan-400"
                       strokeWidth={1.5}
                       aria-hidden
                     />

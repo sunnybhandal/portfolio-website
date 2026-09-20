@@ -3,7 +3,7 @@ export default function PricingSection() {
     <section
       id="pricing"
       aria-labelledby="pricing-heading"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden py-24 sm:py-32 bg-slate-950"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden py-24 sm:py-32 bg-slate-900"
     >
       <div
         aria-hidden
@@ -61,7 +61,7 @@ export default function PricingSection() {
           </div>
 
           <div className="lg:col-span-5 relative flex flex-col justify-center rounded-xl border border-white/10 bg-slate-900/60 p-8 sm:p-10 lg:p-12">
-            <h3 className="font-subheading text-3xl sm:text-4xl font-normal text-left text-slate-50 tracking-tight">
+            <h3 className="font-subheading text-3xl sm:text-4xl font-normal text-left text-cyan-400 tracking-tight">
               Ready for a consult?
             </h3>
             <p className="mt-4 mb-8 text-base sm:text-lg text-slate-300 leading-relaxed">

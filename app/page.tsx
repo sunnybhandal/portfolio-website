@@ -3,6 +3,7 @@ import Footer from '@/components/Footer';
 import JsonLd from '@/components/JsonLd';
 import HomeSection from '@/sections/HomeSection';
 import PortfolioSection from '@/sections/PortfolioSection';
+import ServicesSection from '@/sections/ServicesSection';
 import PricingSection from '@/sections/PricingSection';
 import ContactSection from '@/sections/ContactSection';
 import AboutSection from '@/sections/AboutSection';
@@ -21,6 +22,7 @@ export default function Home() {
       <Navigation />
       <HomeSection />
       <PortfolioSection />
+      <ServicesSection />
       <PricingSection />
       <ContactSection />
       <AboutSection />

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 const sections = [
   { id: 'portfolio', label: 'Portfolio' },
+  { id: 'services', label: 'Services' },
   { id: 'pricing', label: 'Pricing' },
   { id: 'contact', label: 'Contact' },
   { id: 'about', label: 'About' },
@@ -149,7 +150,7 @@ export default function Navigation() {
                 key={section.id}
                 href={`#${section.id}`}
                 aria-current={activeSection === section.id ? 'true' : undefined}
-                className={`px-3 py-2 text-base font-medium tracking-wide transition-colors duration-200 cursor-pointer ${
+                className={`px-2.5 lg:px-3 py-2 text-sm lg:text-base font-medium tracking-wide transition-colors duration-200 cursor-pointer ${
                   activeSection === section.id
                     ? 'text-cyan-400'
                     : 'text-slate-400 hover:text-cyan-400'

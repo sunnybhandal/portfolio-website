@@ -28,18 +28,7 @@ export default function AboutSection() {
             <p>
               My background in software development gave me a strong technical
               foundation, while my current role at Symbotic has strengthened my
-              focus on user experience. I work closely with customers and
-              engineering teams to improve the software that powers autonomous
-              robot fleets, translating real-world feedback into intuitive
-              solutions that simplify complex workflows and create better
-              experiences for the people using them every day.
-            </p>
-            <p>
-              Beyond web development, I enjoy bringing brands to life through
-              thoughtful, cohesive design. From business cards and brochures to
-              presentations and other marketing materials, I love creating
-              visual assets that strengthen a brand&apos;s identity and leave a
-              lasting impression. Whether I&apos;m writing compelling copy,
+              focus on user experience. Whether I&apos;m writing compelling copy,
               refining a user journey, or designing a brand asset, my goal is
               always the same: to create work that is purposeful, user-friendly,
               and memorable.

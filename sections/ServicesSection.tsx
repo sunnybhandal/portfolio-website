@@ -1,4 +1,4 @@
-import { CreditCard, MapPin, PenLine, Presentation, Search, Wrench } from 'lucide-react';
+import { MapPin, PenLine, Search, Wrench } from 'lucide-react';
 
 const services = [
   {
@@ -6,24 +6,6 @@ const services = [
     description:
       'Built with SEO in mind to improve search visibility, attract more customers, and generate qualified leads.',
     icon: Search,
-  },
-  {
-    title: 'Google Business Management',
-    description:
-      'I set up and refine your Google Business Profile so your business looks professional and shows up in local search.',
-    icon: MapPin,
-  },
-  {
-    title: 'Business Cards',
-    description:
-      'Print-ready cards that match your website and brand. The cards will include a QR code to your website or your Google Review page.',
-    icon: CreditCard,
-  },
-  {
-    title: 'Presentations',
-    description:
-      'Clean, on-brand decks for pitches, meetings, and client conversations, designed to be easy to follow and hard to forget.',
-    icon: Presentation,
   },
   {
     title: 'Copywriting',
@@ -36,6 +18,12 @@ const services = [
     description:
       'Ongoing updates, content changes, and performance tweaks so your site stays current, fast, and working the way it should.',
     icon: Wrench,
+  },
+  {
+    title: 'Google Business Management',
+    description:
+      'I set up and refine your Google Business Profile so your business looks professional and shows up in local search.',
+    icon: MapPin,
   },
 ];
 
@@ -75,7 +63,7 @@ export default function ServicesSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
           {services.map((service) => {
             const Icon = service.icon;
 

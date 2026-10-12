@@ -40,7 +40,7 @@ export default function JsonLd() {
         image: `${siteConfig.url}/aboutImage.png`,
         email: siteConfig.email,
         description: siteConfig.description,
-        priceRange: '$500+',
+        priceRange: '$100 + $20/month',
         areaServed: 'Worldwide',
         serviceType: [
           'Custom website design',
@@ -48,8 +48,6 @@ export default function JsonLd() {
           'Website redesign',
           'Search optimization',
           'Google Business management',
-          'Business cards',
-          'Presentations',
           'Copywriting',
           'Website maintenance',
         ],

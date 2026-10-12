@@ -24,11 +24,10 @@ export default function PricingSection() {
           <div className="lg:col-span-7 flex flex-col justify-between gap-10 rounded-xl border border-white/10 bg-white/[0.03] p-8 sm:p-10 lg:p-12">
             <div className="space-y-6 max-w-xl">
               <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-                Every website is tailored to your business, so the investment
-                reflects your goals, content, and the features you need.
-                Websites start at $500, and if your project needs more, I&apos;ll
-                walk you through every additional cost before we begin, clearly
-                and in writing, with no surprises.
+                Every website is tailored to your business. Setup is $100, then
+                $20 a month afterwards. That monthly rate includes maintenance
+                and any changes, so your site stays current without surprise
+                fees.
               </p>
               <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
                 You&apos;ll always know exactly what you&apos;re paying for.
@@ -47,16 +46,29 @@ export default function PricingSection() {
               </p>
             </div>
 
-            <div className="space-y-3 pt-2">
-              <p className="text-xs sm:text-sm font-medium tracking-[0.16em] uppercase text-slate-400">
-                Starting at
-              </p>
-              <p className="font-heading text-5xl sm:text-6xl md:text-7xl font-normal tracking-tight leading-none text-slate-50">
-                $500
-              </p>
-              <p className="text-sm sm:text-base text-slate-400">
-                Transparent pricing, with every extra cost shared up front.
-              </p>
+            <div className="flex flex-col sm:flex-row gap-8 sm:gap-14 pt-2">
+              <div className="space-y-3">
+                <p className="text-xs sm:text-sm font-medium tracking-[0.16em] uppercase text-slate-400">
+                  Initial setup
+                </p>
+                <p className="font-heading text-5xl sm:text-6xl md:text-7xl font-normal tracking-tight leading-none text-slate-50">
+                  $100
+                </p>
+              </div>
+              <div className="space-y-3">
+                <p className="text-xs sm:text-sm font-medium tracking-[0.16em] uppercase text-slate-400">
+                  Then
+                </p>
+                <p className="font-heading text-5xl sm:text-6xl md:text-7xl font-normal tracking-tight leading-none text-slate-50">
+                  $20
+                  <span className="ml-1 text-xl sm:text-2xl font-medium tracking-normal text-slate-400">
+                    /month
+                  </span>
+                </p>
+                <p className="text-sm sm:text-base text-slate-400">
+                  Includes maintenance and any changes.
+                </p>
+              </div>
             </div>
           </div>
 

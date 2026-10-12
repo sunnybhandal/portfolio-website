@@ -187,7 +187,7 @@ export default function Navigation() {
         className={`nav-dropdown md:hidden ${isMobileMenuOpen ? 'is-open' : ''}`}
       >
         <div className="nav-dropdown-inner">
-          <div className="nav-dropdown-panel bg-slate-800/95 backdrop-blur-xl">
+          <div className="nav-dropdown-panel border-b border-white bg-slate-800/95 backdrop-blur-xl">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 pb-4">
               <div className="flex flex-col space-y-1 pt-3">
                 {sections.map((section) => (

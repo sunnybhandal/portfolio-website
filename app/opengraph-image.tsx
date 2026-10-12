@@ -53,7 +53,7 @@ export default function OpenGraphImage() {
               maxWidth: 760,
             }}
           >
-            Built for desktop and mobile. Starting at $500.
+            Built for desktop and mobile. $100 setup, then $20/month.
           </div>
         </div>
       </div>

@@ -18,11 +18,9 @@ export default function HomeSection() {
           >
             <span className="sr-only">Sunny Bhandal. </span>
             Websites designed to impress.
-            <br />
-            <span className="text-cyan-400 italic">Built to perform.</span>
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto">
-            Custom websites designed to improve search visibility and help businesses build trust, generate leads, and grow online.
+            Websites designed to help businesses build trust and grow online.
           </p>
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 pt-2 sm:pt-3 w-full">
             <a

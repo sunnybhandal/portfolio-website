@@ -2,7 +2,7 @@ export const siteConfig = {
   name: 'Sunny Bhandal',
   title: 'Sunny Bhandal | Custom Websites for Businesses',
   description:
-    'Sunny Bhandal designs and builds custom websites for businesses. Every site is made for desktop and mobile. Setup is $100, then $20 a month for maintenance and changes.',
+    'Sunny Bhandal designs and builds custom websites for businesses. Every site is made for desktop and mobile. The cost is determined after a consultation, with fair pricing that works around your budget.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://sunnybhandal.com',
   email: 'sunnybhandal123@gmail.com',
   locale: 'en_US',
@@ -13,12 +13,7 @@ export const faqs: { question: string; answer: string }[] = [
   {
     question: 'How much does a website cost?',
     answer:
-      'Setup is $100, then $20 a month afterwards. The monthly rate includes maintenance and any changes. If you have a smaller project or are not sure where to start, I am happy to discuss options.',
-  },
-  {
-    question: 'What’s included in a project?',
-    answer:
-      'Each project includes custom functionality, responsive design, strategy sessions, and brand optimization. After setup, the $20 monthly rate covers maintenance and any changes to keep your site current.',
+      'The cost of a website is determined after a consultation, once I understand your business and what you need. Pricing is fair, and I work around your budget.',
   },
   {
     question: 'How long does a typical project take?',
@@ -43,7 +38,7 @@ export const faqs: { question: string; answer: string }[] = [
   {
     question: 'Can you redesign my existing website?',
     answer:
-      'Absolutely. If your current website feels outdated, difficult to navigate, or no longer reflects your brand, I can redesign it with a modern look, improved user experience, and better performance.',
+      'Absolutely. If your current website feels outdated, difficult to navigate, or no longer reflects your brand, I can redesign it with a modern look.',
   },
   {
     question: 'How do I get in touch?',

@@ -4,14 +4,13 @@ import { useEffect, useState } from 'react';
 
 const sections = [
   { id: 'portfolio', label: 'Portfolio' },
-  { id: 'services', label: 'Services' },
+  { id: 'services', label: 'How it Works' },
   { id: 'pricing', label: 'Pricing' },
   { id: 'contact', label: 'Contact' },
   { id: 'about', label: 'About' },
-  { id: 'faq', label: 'FAQ' },
 ];
 
-const scrollSectionIds = ['home', ...sections.map((section) => section.id)];
+const scrollSectionIds = ['home', ...sections.map((section) => section.id), 'faq'];
 
 export default function Navigation() {
   const [activeSection, setActiveSection] = useState('home');

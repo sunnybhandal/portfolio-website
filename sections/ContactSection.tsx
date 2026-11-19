@@ -208,7 +208,7 @@ export default function ContactSection() {
                     setFieldErrors((current) => ({ ...current, details: undefined }));
                   }
                 }}
-                placeholder="Tell me what you're looking for, and I'll be in touch."
+                placeholder="Tell me about your business and needs"
                 className={`${fieldClass(Boolean(fieldErrors.details))} resize-none overflow-y-auto`}
               />
               {fieldErrors.details && (
@@ -257,9 +257,7 @@ export default function ContactSection() {
           <aside className="order-1 lg:order-2 lg:col-span-6">
             <div className="rounded-xl border border-white/10 bg-white/[0.03] p-8 sm:p-10 lg:sticky lg:top-28 w-full">
               <p className="font-subheading text-2xl sm:text-3xl md:text-[2.15rem] font-normal text-slate-100 leading-snug">
-                Whether you&apos;re starting from scratch or refreshing an
-                existing website, I&apos;d love to hear about your project. Fill
-                out the form and I&apos;ll be in touch.
+                Fill out the form and I&apos;ll be in touch.
               </p>
             </div>
           </aside>

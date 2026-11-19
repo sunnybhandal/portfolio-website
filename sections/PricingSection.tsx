@@ -21,21 +21,19 @@ export default function PricingSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6">
-          <div className="lg:col-span-7 flex flex-col justify-between gap-10 rounded-xl border border-white/10 bg-white/[0.03] p-8 sm:p-10 lg:p-12">
+          <div className="lg:col-span-7 flex flex-col justify-center rounded-xl border border-white/10 bg-white/[0.03] p-8 sm:p-10 lg:p-12">
             <div className="space-y-6 max-w-xl">
               <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-                Every website is tailored to your business. Setup is $100, then
-                $20 a month afterwards. That monthly rate includes maintenance
-                and any changes, so your site stays current without surprise
-                fees.
+                Every website is tailored to your business. The cost is
+                determined after a consultation, once I understand what you
+                need.
               </p>
               <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-                You&apos;ll always know exactly what you&apos;re paying for.
-                There are no hidden charges, ever.
+                Pricing is fair, and I work around your budget.
               </p>
               <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-                If you have a smaller project or aren&apos;t sure where to start,
-                I&apos;d be happy to discuss options. For more details, visit the{' '}
+                If you aren&apos;t sure where to start, I&apos;d be happy to
+                talk it through. For more details, visit the{' '}
                 <a
                   href="#faq"
                   className="text-cyan-400 hover:text-cyan-300 underline decoration-cyan-400/40 hover:decoration-cyan-300 transition-colors"
@@ -45,40 +43,15 @@ export default function PricingSection() {
                 section.
               </p>
             </div>
-
-            <div className="flex flex-col sm:flex-row gap-8 sm:gap-14 pt-2">
-              <div className="space-y-3">
-                <p className="text-xs sm:text-sm font-medium tracking-[0.16em] uppercase text-slate-400">
-                  Initial setup
-                </p>
-                <p className="font-heading text-5xl sm:text-6xl md:text-7xl font-normal tracking-tight leading-none text-slate-50">
-                  $100
-                </p>
-              </div>
-              <div className="space-y-3">
-                <p className="text-xs sm:text-sm font-medium tracking-[0.16em] uppercase text-slate-400">
-                  Then
-                </p>
-                <p className="font-heading text-5xl sm:text-6xl md:text-7xl font-normal tracking-tight leading-none text-slate-50">
-                  $20
-                  <span className="ml-1 text-xl sm:text-2xl font-medium tracking-normal text-slate-400">
-                    /month
-                  </span>
-                </p>
-                <p className="text-sm sm:text-base text-slate-400">
-                  Includes maintenance and any changes.
-                </p>
-              </div>
-            </div>
           </div>
 
           <div className="lg:col-span-5 relative flex flex-col justify-center rounded-xl border border-white/10 bg-slate-900/60 p-8 sm:p-10 lg:p-12">
             <h3 className="font-subheading text-3xl sm:text-4xl font-normal text-left text-cyan-400 tracking-tight">
-              Ready for a consult?
+              Want a free quote?
             </h3>
             <p className="mt-4 mb-8 text-base sm:text-lg text-slate-300 leading-relaxed">
-              Tell me a little about your project and I&apos;ll follow up with a
-              clear, no-pressure conversation.
+              Tell me about your business and I&apos;ll follow up with a clear,
+              no-pressure conversation.
             </p>
             <a
               href="#contact"

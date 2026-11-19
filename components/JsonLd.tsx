@@ -40,7 +40,6 @@ export default function JsonLd() {
         image: `${siteConfig.url}/aboutImage.png`,
         email: siteConfig.email,
         description: siteConfig.description,
-        priceRange: '$100 + $20/month',
         areaServed: 'Worldwide',
         serviceType: [
           'Custom website design',
